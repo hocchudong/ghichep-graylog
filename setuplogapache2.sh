@@ -1,4 +1,7 @@
 #!bin/bash
+
+#### Sua file cau hinh Log cua apache2 bang cach kiem tra su ton tai cua file ####
+
 echo " Start restore!!!!!!"
 file1="/etc/apache2/sites-enabled/000-default"
 file2="/etc/apache2/sites-enabled/000-default.conf"
