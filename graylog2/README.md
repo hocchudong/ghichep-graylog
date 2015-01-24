@@ -15,6 +15,13 @@ vi /opt/graylog2-web-interface/conf/graylog2-web-interface.conf
 
 * Sửa dòng 17 (trong bản 0.9.4) thành `timezone="Asia/Ho_Chi_Minh"` giống như hình minh họa: http://prntscr.com/5v39zm
 
+### VẤN ĐỀ VỀ TÌM KIẾM TRONG GRAYLOG2
+
+- Đến số lần đăng nhập thành công trong ssh
+```sh
+message:" pam_unix(sshd:auth): authentication failure" AND message:" user=" AND application_name:sshd
+```
+
 ### VẤN ĐỀ VỀ Graylog2 extractors
 
 Trong Graylog có kỹ thuật cắt lọc các ký tự, các nội dung trong bản tin log, ví dụ dưới :
