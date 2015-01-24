@@ -27,6 +27,7 @@ Failed password for invalid user adfsdf from 172.16.69.1 port 14026 ssh2
 ```sh
 ^.*user (.+) from\b
 ```
+- KẾT QUẢ
 ![Minh họa](http://i.imgur.com/xcXWOi0.png)
 
 * Lấy ra code http trong bản tin sau
@@ -37,5 +38,7 @@ Failed password for invalid user adfsdf from 172.16.69.1 port 14026 ssh2
 - Cú pháp
 ^.*HTTP/1.1" (.+?)\s\b
 ```
+
+- KẾT QUẢ
 ![Kết quả](http://i.imgur.com/m3yK91F.png)
 
