@@ -15,3 +15,17 @@ vi /opt/graylog2-web-interface/conf/graylog2-web-interface.conf
 
 * Sửa dòng 17 (trong bản 0.9.4) thành `timezone="Asia/Ho_Chi_Minh"` giống như hình minh họa: http://prntscr.com/5v39zm
 
+### VẤN ĐỀ VỀ Graylog2 extractors
+
+Trong Graylog có kỹ thuật cắt lọc các ký tự, các nội dung trong bản tin log, ví dụ dưới :
+
+* Nội dung bản tin: 
+```sh 
+Failed password for invalid user adfsdf from 172.16.69.1 port 14026 ssh2
+```
+* Sử dụng cú pháp `Regular expression` để lọc ra từ `adfsdf`
+```sh
+^.*user (.+) from\b
+```
+![Minh họa](http://prntscr.com/5wcfb1)
+
