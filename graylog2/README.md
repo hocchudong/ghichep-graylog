@@ -22,6 +22,16 @@ vi /opt/graylog2-web-interface/conf/graylog2-web-interface.conf
 message:" pam_unix(sshd:auth): authentication failure" AND message:" user=" AND application_name:sshd
 ```
 
+- Tổng số lần login SSH thành công
+```sh
+message:" Accepted password for" AND application_name:sshd
+```
+
+- Tổng số lần đăng nhập thành công và thất bại
+```sh
+application_name:sshd AND (message:" Accepted password for" OR message:" pam_unix(sshd:auth): authentication failure ")
+```
+
 ### VẤN ĐỀ VỀ Graylog2 extractors
 
 Trong Graylog có kỹ thuật cắt lọc các ký tự, các nội dung trong bản tin log, ví dụ dưới :
