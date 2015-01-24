@@ -29,3 +29,13 @@ Failed password for invalid user adfsdf from 172.16.69.1 port 14026 ssh2
 ```
 ![Minh họa](http://i.imgur.com/xcXWOi0.png)
 
+* Lấy ra code http trong bản tin sau
+```sh
+- Bản tin
+172.16.69.1 - - [24/Jan/2015:14:24:00 +0700] "GET /phpipam/subnets/3/ HTTP/1.1" 200 5832 "http://172.16.69.22/phpipam/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/45.0 Chrome/39.0.2171.103 Safari/537.36"
+
+- Cú pháp
+^.*HTTP/1.1" (.+?)\s\b
+```
+![Kết quả](http://i.imgur.com/m3yK91F.png)
+
