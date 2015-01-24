@@ -16,6 +16,8 @@ echo '$template GRAYLOGRFC5424,"<%pri%>%protocol-version% %timestamp:::date-rfc3
 echo '$PreserveFQDN on' >> /etc/rsyslog.d/50-default.conf
 echo "*.* @$IP_GRAYLOG2:514;GRAYLOG2-2" >>  /etc/rsyslog.d/50-default.conf
 
+chown -R syslog:syslog /var/log
+
 echo "Restarting rsyslog"
 service rsyslog restart
 
