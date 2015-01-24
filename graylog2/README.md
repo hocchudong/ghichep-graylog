@@ -27,5 +27,5 @@ Failed password for invalid user adfsdf from 172.16.69.1 port 14026 ssh2
 ```sh
 ^.*user (.+) from\b
 ```
-![Minh họa](http://prntscr.com/5wcfb1)
+![Minh họa](http://i.imgur.com/xcXWOi0.png)
 
