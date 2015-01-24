@@ -23,7 +23,7 @@ echo "#### BAT DAU CAU HINH ####"
 
 sed -i 's/ErrorLog ${APACHE_LOG_DIR}\/error.log/ErrorLog syslog:local1/g' /etc/apache2/apache2.conf
 sed -i 's/ErrorLog ${APACHE_LOG_DIR}\/error.log/ErrorLog syslog:local1/g' /etc/apache2/sites-enabled/000-default
-sed -i 's/CustomLog ${APACHE_LOG_DIR}\/access.log combined/CustomLog "| \/usr\/bin\/logger -taccess -plocal1.info" combined/g' /etc/apache2/sites-enabled/000-default
+sed -i 's/CustomLog ${APACHE_LOG_DIR}\/access.log combined/CustomLog "| \/usr\/bin\/logger -t apache -p local1.info" combined/g' /etc/apache2/sites-enabled/000-default
 
 sleep 3
 
@@ -53,7 +53,7 @@ echo "#### BAT DAU CAU HINH ####"
 
 sed -i 's/ErrorLog ${APACHE_LOG_DIR}\/error.log/ErrorLog syslog:local1/g' /etc/apache2/apache2.conf
 sed -i 's/ErrorLog ${APACHE_LOG_DIR}\/error.log/ErrorLog syslog:local1/g' /etc/apache2/sites-enabled/000-default.conf
-sed -i 's/CustomLog ${APACHE_LOG_DIR}\/access.log combined/CustomLog "| \/usr\/bin\/logger -taccess -plocal1.info" combined/g' /etc/apache2/sites-enabled/000-default.conf
+sed -i 's/CustomLog ${APACHE_LOG_DIR}\/access.log combined/CustomLog "| \/usr\/bin\/logger -t apache -p local1.info" combined/g' /etc/apache2/sites-enabled/000-default.conf
 
 sleep 3
 
