@@ -10,7 +10,7 @@
 # Author: Congto / TW: @tothanhcong
 ```
 
-#### TOPO
+#### DIAGRAM LAB
 ![Topo LAB](grayloglab.png)
 
 #### GUIDE

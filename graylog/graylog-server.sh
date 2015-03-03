@@ -66,8 +66,6 @@ apt-get install apt-transport-https
 apt-get update
 apt-get install graylog-server graylog-web
 
-cd graylog2-server/
-cp /opt/graylog2-server/graylog2.conf.example /etc/graylog/server/server.conf
 pass_secret=$(pwgen -s 96)
 sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/server/server.conf
 
