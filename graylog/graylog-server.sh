@@ -84,7 +84,7 @@ sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri 
 service graylog-server start
 
 echo "Waiting for Graylog server to start!"
-while ! nc -vz localhost 12900; do sleep 1; done
+# while ! nc -vz localhost 12900; do sleep 1; done
 
 echo "##### Configuring Graylog Web interface #####"
 sleep 3
@@ -102,13 +102,13 @@ sed -i -e 's|#$UDPServerRun 514|$UDPServerRun 514|' /etc/rsyslog.conf
 sed -i -e 's|#$ModLoad imtcp|$ModLoad imtcp|' /etc/rsyslog.conf
 sed -i -e 's|#$InputTCPServerRun 514|$InputTCPServerRun 514|' /etc/rsyslog.conf
 sed -i -e 's|*.*;auth,authpriv.none|#*.*;auth,authpriv.none|' /etc/rsyslog.d/50-default.conf
-echo '$template GRAYLOG,"<%pri%>1 %timegenerated:::date-rfc3339% %fromhost% %app-name% %procid% %msg%\n"'  | tee -a /etc/rsyslog.d/32-graylog2.conf
+echo '$template GRAYLOG,"<%pri%>1 %timegenerated:::date-rfc3339% %fromhost% %app-name% %procid% %msg%\n"'  | tee -a /etc/rsyslog.d/32-graylog.conf
 
 # echo '$template GRAYLOGRFC5424,"<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msg%\n"' | tee -a /etc/rsyslog.d/32-graylog2.conf
 # echo '$template GRAYLOG2-1,"<%PRI%>1 %timegenerated:::date-rfc3339% %hostname% %syslogtag% - %APP-NAME%: %msg:::drop-last-lf%\n"' | tee /etc/rsyslog.d/32-graylog2.conf
 
-echo '$PreserveFQDN on' | tee -a  /etc/rsyslog.d/32-graylog2.conf
-echo '*.* @localhost:10514;GRAYLOG' | tee -a  /etc/rsyslog.d/32-graylog2.conf
+echo '$PreserveFQDN on' | tee -a  /etc/rsyslog.d/32-graylog.conf
+echo '*.* @localhost:10514;GRAYLOG' | tee -a  /etc/rsyslog.d/32-graylog.conf
 
 
 echo "##### Restarting rsyslog #####"
