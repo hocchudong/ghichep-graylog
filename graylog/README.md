@@ -10,4 +10,8 @@
 # Author: Congto / TW: @tothanhcong
 ```
 
+#### TOPO
+![Topo LAB](/grayloglab.png)
+
 #### GUIDE
+Graylog Server 
