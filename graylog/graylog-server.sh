@@ -13,11 +13,11 @@ IPADDY="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -
 
 echo "##### Script install Graylog V1.0 (Script cai dat Graylog V1.0) ######"
 sleep 3
-echo "##### Enter password for Graylog server (nhap password cho Graylog) #####"
+echo "##### Enter password for Graylog server (Nhap password cho Graylog) #####"
 read adminpass
 
 #update
-apt-get -qq update
+apt-get update
 
 #install software
 apt-get -y install git curl build-essential openjdk-7-jre pwgen wget ssh ntp
@@ -28,7 +28,6 @@ wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearc
 
 dpkg -i elasticsearch-1.4.4.deb
 sed -i -e 's|#cluster.name: elasticsearch|cluster.name: graylog2|' /etc/elasticsearch/elasticsearch.yml
-
 
 echo "#### Restart elasticsearch ####"
 sleep 3
@@ -45,7 +44,7 @@ echo "# End of file" >> /etc/security/limits.conf
 apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 echo 'deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 
-apt-get -qq update
+apt-get update
 
 apt-get install -y mongodb-org
 
