@@ -115,7 +115,7 @@ echo "##### Restarting rsyslog #####"
 service rsyslog restart
 
 echo "##### Starting web interface #####"
-service graylog2-web start
+service graylog-web start
 
 #################
 echo "Setup Complete!"
