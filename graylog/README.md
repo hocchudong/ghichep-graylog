@@ -11,7 +11,7 @@
 ```
 
 #### TOPO
-![Topo LAB](/grayloglab.png)
+![Topo LAB](grayloglab.png)
 
 #### GUIDE
 Graylog Server 
