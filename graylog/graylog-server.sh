@@ -69,7 +69,7 @@ apt-get install graylog-server graylog-web
 pass_secret=$(pwgen -s 96)
 sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/server/server.conf
 
-admin_hash=$(echo -n $adminpass |sha256sum|awk '{print $1}')
+admin_hash=$(echo -n $adminpass | sha256sum -a 256 | awk '{print $1}')
 sed -i -e "s|root_password_sha2 =|root_password_sha2 = $admin_hash|" /etc/graylog/server/server.conf
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
 sed -i -e 's|mongodb_useauth = true|mongodb_useauth = false|' /etc/graylog/server/server.conf
