@@ -15,7 +15,7 @@ echo '$template GRAYLOG,"<%pri%>1 %timegenerated:::date-rfc3339% %fromhost% %app
 
 echo '$template GRAYLOGRFC5424,"<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msg%\n"' >>  /etc/rsyslog.d/50-default.conf
 echo '$PreserveFQDN on' >> /etc/rsyslog.d/50-default.conf
-echo "*.* @$IP_GRAYLOG:514;GRAYLOG" >>  /etc/rsyslog.d/50-default.conf
+echo "*.* @$IP_GRAYLOG:10514;GRAYLOG" >>  /etc/rsyslog.d/50-default.conf
 
 # chown -R syslog:syslog /var/log
 

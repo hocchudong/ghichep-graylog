@@ -46,13 +46,20 @@ apt-get -y install git curl build-essential openjdk-7-jre pwgen wget ssh ntp
 echo -e "\033[33m ##### Install elasticsearch ##### \033[0m"
 sleep 3
 sudo apt-get install elasticsearch
-sed -i -e 's|#cluster.name: elasticsearch|cluster.name: graylogcluster|' /etc/elasticsearch/elasticsearch.yml
+sed -i -e 's|#cluster.name: elasticsearch|cluster.name: graylog|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#transport.tcp.port: 9300|transport.tcp.port: 9300|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#http.port: 9200|http.port: 9200|' /etc/elasticsearch/elasticsearch.yml
+
+mv /etc/security/limits.conf /etc/security/limits.bak
+grep -Ev "# End of file" /etc/security/limits.bak > /etc/security/limits.conf
+echo "elasticsearch soft nofile 32000" >> /etc/security/limits.conf
+echo "elasticsearch hard nofile 32000" >> /etc/security/limits.conf
+echo "# End of file" >> /etc/security/limits.conf
 
 echo "#### Restart elasticsearch ####"
 sleep 3
 service elasticsearch restart
+update-rc.d elasticsearch defaults
 
 # Install Mongodb
 echo -e "\033[33m ##### Install Mongodb ##### \033[0m"
@@ -81,7 +88,7 @@ sed -i -e "s|root_password_sha2 =|root_password_sha2 = $admin_hash|" /etc/graylo
 sed -i 's|#root_timezone = UTC|root_timezone = Asia/Ho_Chi_Minh|' /etc/graylog/server/server.conf
 sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri = http://127.0.0.1:12900/|' /etc/graylog/server/server.conf
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
-sed -i -e 's|#elasticsearch_cluster_name = graylog2|elasticsearch_cluster_name = graylogcluster|' /etc/graylog/server/server.conf
+sed -i -e 's|#elasticsearch_cluster_name = graylog2|elasticsearch_cluster_name = graylog|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 192.168.1.203:9300|elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|' /etc/graylog/server/server.conf
 sed -i -e 's|mongodb_useauth = true|mongodb_useauth = false|' /etc/graylog/server/server.conf
@@ -129,3 +136,6 @@ echo "You can access Graylog Server by IP $IPADD_ETH0:9000"
 echo "User: admin"
 echo "Pass: $adminpass"
 echo -e "\033[0m"
+echo "Rebooting "
+sleep 10
+init 6
