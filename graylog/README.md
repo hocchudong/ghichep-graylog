@@ -14,4 +14,11 @@
 ![Topo LAB](grayloglab.png)
 
 #### GUIDE
-Graylog Server 
+- Graylog on Server 
+```sh
+wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-server.sh
+```
+
+- Graylog for client
+
+

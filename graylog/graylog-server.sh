@@ -5,6 +5,10 @@
 # Update: 04/03/2015
 # Author: Congto / @tothanhcong
 #############################################################
+# Run with root account  
+# wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-server.sh
+# bash graylog-server.sh
+# Wait ....join
 
 ###############################
 # Get IP Server
@@ -86,7 +90,7 @@ sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/
 
 service graylog-server start
 echo "Waiting for Graylog server to start!"
-# while ! nc -vz localhost 12900; do sleep 1; done
+while ! nc -vz localhost 12900; do sleep 1; done
 
 echo -e "\033[33m  ##### Configuring Graylog Web interface ##### \033[0m"
 sleep 3
