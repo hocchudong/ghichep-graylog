@@ -17,6 +17,8 @@
 - Graylog on Server 
 ```sh
 wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-server.sh
+bash graylog-server.sh
+
 ```
 
 - Graylog for client (Ubuntu)
