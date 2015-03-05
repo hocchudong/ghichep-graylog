@@ -17,7 +17,7 @@ IPADD_ETH0="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d '
 echo -e "\033[33m  ##### Script install Graylog V1.0 (Script cai dat Graylog V1.0) ###### \033[0m"
 sleep 3
 echo -e "\033[32m  ##### Enter password for Graylog server (Nhap password cho Graylog) ##### \033[0m"
-read adminpass
+read -r adminpass
 
 ###############################
 echo -e "\033[33m ##### Update repos packages Elasticsearch, MongoDB, Graylog \033[0m"

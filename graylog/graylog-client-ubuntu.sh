@@ -2,7 +2,7 @@
 
 #update
 echo "##### ENTER IP ADDRESS GRAYLOG SERVER (NHAP IP CUA GRAYLOG SERVER) #####"
-read IP_GRAYLOG
+read -r IP_GRAYLOG
 
 apt-get update
 # SAO LUU FILE /etc/rsyslog.d/50-default.conf
