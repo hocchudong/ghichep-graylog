@@ -1,23 +1,22 @@
 #!/bin/bash
 #############################################################
-#
 # Graylog V1.0
 # Ubuntu 14.04.1
-# Update: 03/03/2015
-# Author: Congto / TW: @tothanhcong
+# Update: 04/03/2015
+# Author: Congto / @tothanhcong
 #############################################################
 
 ###############################
 # Get IP Server
 IPADD_ETH0="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 
-echo "##### Script install Graylog V1.0 (Script cai dat Graylog V1.0) ######"
+echo -e "\033[33m  ##### Script install Graylog V1.0 (Script cai dat Graylog V1.0) ###### \033[0m"
 sleep 3
-echo "##### Enter password for Graylog server (Nhap password cho Graylog) #####"
+echo -e "\033[32m  ##### Enter password for Graylog server (Nhap password cho Graylog) ##### \033[0m"
 read adminpass
 
 ###############################
-echo "##### Update repos packages Elasticsearch, MongoDB,Graylog "
+echo -e "\033[33m ##### Update repos packages Elasticsearch, MongoDB, Graylog \033[0m"
 sleep 3
 # For Elasticsearch
 wget -qO - https://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -40,6 +39,8 @@ apt-get update
 apt-get -y install git curl build-essential openjdk-7-jre pwgen wget ssh ntp
 
 # Install elasticsearch
+echo -e "\033[33m ##### Install elasticsearch ##### \033[0m"
+sleep 3
 sudo apt-get install elasticsearch
 sed -i -e 's|#cluster.name: elasticsearch|cluster.name: graylogcluster|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#transport.tcp.port: 9300|transport.tcp.port: 9300|' /etc/elasticsearch/elasticsearch.yml
@@ -50,6 +51,8 @@ sleep 3
 service elasticsearch restart
 
 # Install Mongodb
+echo -e "\033[33m ##### Install Mongodb ##### \033[0m"
+sleep 3
 apt-get install -y mongodb-org
 
 # Start mongodb
@@ -58,23 +61,23 @@ service mongod start
 # Test connection
 while ! nc -vz localhost 27017; do sleep 1; done
 
-echo "##### Install sussces MONGODB #####"
+echo -e "\033[33m ##### Install sussces MONGODB ##### \033[0m"
 sleep 3
 
 # Download Graylog2 tarballs
-echo "##### Install Graylog1.0 #####"
+echo -e "\033[33m  ##### Install Graylog V1.0 Server & Graylog V.10 Web##### \033[0m"
+sleep 3
 apt-get install graylog-server graylog-web
 
 echo "##### Config Graylog server #####"
-sleep 3
 pass_secret=$(pwgen -s 96)
 sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/server/server.conf
-admin_hash=$(echo -n $adminpass | sha256sum -a 256 | awk '{print $1}')
+admin_hash=$(echo -n $adminpass | shasum -a 256 | awk '{print $1}')
 sed -i -e "s|root_password_sha2 =|root_password_sha2 = $admin_hash|" /etc/graylog/server/server.conf
 sed -i 's|#root_timezone = UTC|root_timezone = Asia/Ho_Chi_Minh|' /etc/graylog/server/server.conf
 sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri = http://127.0.0.1:12900/|' /etc/graylog/server/server.conf
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
-sed -i -e 's|#elasticsearch_cluster_name = graylog2|#elasticsearch_cluster_name = graylogcluster|' /etc/graylog/server/server.conf
+sed -i -e 's|#elasticsearch_cluster_name = graylog2|elasticsearch_cluster_name = graylogcluster|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 192.168.1.203:9300|elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|' /etc/graylog/server/server.conf
 sed -i -e 's|mongodb_useauth = true|mongodb_useauth = false|' /etc/graylog/server/server.conf
@@ -85,7 +88,7 @@ service graylog-server start
 echo "Waiting for Graylog server to start!"
 # while ! nc -vz localhost 12900; do sleep 1; done
 
-echo "##### Configuring Graylog Web interface #####"
+echo -e "\033[33m  ##### Configuring Graylog Web interface ##### \033[0m"
 sleep 3
 sed -i -e 's|graylog2-server.uris=""|graylog2-server.uris="http://127.0.0.1:12900/"|' /etc/graylog/web/web.conf
 app_secret=$(pwgen -s 96)
@@ -93,7 +96,7 @@ sed -i -e 's|application.secret=""|application.secret="'$app_secret'"|' /etc/gra
 sed -i -e 's|# timezone="Europe/Berlin"|timezone="Asia/Ho_Chi_Minh"|' /etc/graylog/web/web.conf
 service graylog-web start
 
-echo "##### Configuring rsyslog #####"
+echo -e "\033[33m ##### Configuring rsyslog ##### \033[0m"
 sleep 3 
 
 sed -i -e 's|#$ModLoad imudp|$ModLoad imudp|' /etc/rsyslog.conf
@@ -117,7 +120,8 @@ echo "##### Starting web interface #####"
 service graylog-web start
 
 #################
-echo "Setup Complete!"
+echo -e "\033[32m Setup Complete!"
 echo "You can access Graylog Server by IP $IPADD_ETH0:9000"
 echo "User: admin"
 echo "Pass: $adminpass"
+echo -e "\033[0m"
