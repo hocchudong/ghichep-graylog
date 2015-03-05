@@ -19,6 +19,10 @@
 wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-server.sh
 ```
 
-- Graylog for client
+- Graylog for client (Ubuntu)
+```sh
+wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-client-ubuntu.sh
+bash graylog-client-ubuntu.sh
+```
 
 
