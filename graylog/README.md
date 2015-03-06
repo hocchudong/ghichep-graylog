@@ -12,7 +12,7 @@
 #### DIAGRAM LAB
 ![Topo LAB](images/grayloglab.png)
 
-#### GUIDE
+#### How to install 
 - Graylog on Server 
 ```sh
 wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-server.sh
@@ -33,6 +33,6 @@ bash graylog-client-ubuntu.sh
 
 ![Step1](images/Screenshot_3.png)
 
-
+![Step1](images/Screenshot_4.png)
 
 
