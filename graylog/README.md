@@ -10,7 +10,7 @@
 ```
 
 #### DIAGRAM LAB
-![Topo LAB](/images/grayloglab.png)
+![Topo LAB](images/grayloglab.png)
 
 #### GUIDE
 - Graylog on Server 
@@ -27,11 +27,11 @@ bash graylog-client-ubuntu.sh
 ```
 
 #### User Guide for Graylog WEB
-![Step1](/images/Screenshot_1.png)
+![Step1](images/Screenshot_1.png)
 
-![Step1](/images/Screenshot_2.png)
+![Step1](images/Screenshot_2.png)
 
-![Step1](/images/Screenshot_3.png)
+![Step1](images/Screenshot_3.png)
 
 
 
