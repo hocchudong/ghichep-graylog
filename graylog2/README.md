@@ -17,12 +17,12 @@ vi /opt/graylog2-web-interface/conf/graylog2-web-interface.conf
 
 ### VẤN ĐỀ VỀ TÌM KIẾM TRONG GRAYLOG2
 
-- Đến số lần đăng nhập thành công trong ssh
+- Đến số lần đăng nhập thất bại trong ssh
 ```sh
-message:" pam_unix(sshd:auth): authentication failure" AND message:" user=" AND application_name:sshd
+application_name:sshd AND message:" pam_unix(sshd:auth): authentication failure "
 ```
 
-- Tổng số lần login SSH thành công
+- Tổng số lần đăng nhập thành công
 ```sh
 message:" Accepted password for" AND application_name:sshd
 ```
