@@ -84,7 +84,7 @@ transport_email_use_auth = true
 transport_email_use_tls = false
 transport_email_use_ssl = true
 transport_email_auth_username = shinkenvdc@gmail.com
-transport_email_auth_password = passworddaivavocungkhonho
+transport_email_auth_password = mat_khau
 transport_email_subject_prefix = [graylog2]
 transport_email_from_email = shinkenvdc@gmail.com
 # Specify and uncomment this if you want to include links to the stream in your stream alert mails.
