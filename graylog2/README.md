@@ -60,3 +60,13 @@ Failed password for invalid user adfsdf from 172.16.69.1 port 14026 ssh2
 - KẾT QUẢ
 ![Kết quả](http://i.imgur.com/m3yK91F.png)
 
+
+### UPGRADE GRAYLOG TỪ BẢN 1.x trở lên
+Chú ý:  Cần backup file cấu hình của graylog-server ra trước vì file cấu hình mới sẽ ghi đè lên.
+
+- Thực hiện khai báo các repos sau đó chạy lệnh sau
+```
+sudo apt-get --only-upgrade install graylog-server
+sudo apt-get --only-upgrade install graylog-web
+```
+
