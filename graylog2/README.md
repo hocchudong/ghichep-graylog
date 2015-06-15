@@ -70,3 +70,23 @@ sudo apt-get --only-upgrade install graylog-server
 sudo apt-get --only-upgrade install graylog-web
 ```
 
+
+### Cấu hình gửi mail trong Graylog 1.x
+
+```
+# The email address of the root user.
+#root_email = ""
+# Email transport
+transport_email_enabled = true
+transport_email_hostname = smtp.gmail.com
+transport_email_port = 465
+transport_email_use_auth = true
+transport_email_use_tls = false
+transport_email_use_ssl = true
+transport_email_auth_username = shinkenvdc@gmail.com
+transport_email_auth_password = passworddaivavocungkhonho
+transport_email_subject_prefix = [graylog2]
+transport_email_from_email = shinkenvdc@gmail.com
+# Specify and uncomment this if you want to include links to the stream in your stream alert mails.
+#transport_email_web_interface_url = https://graylog2.example.com
+```
