@@ -30,5 +30,8 @@ EOF
 cp /etc/rsyslog.conf /etc/rsyslog.conf.orig
 
 # Them dong moi
-sed -e  "s/\$ModLoad imklog   # provides kernel logging support/\$ModLoad imklog   # provides kernel logging support\n\
-\$ModLoad imfile # module log for Nginx/g"   /etc/rsyslog.conf
+#sed -e  "s/\$ModLoad imklog   # provides kernel logging support/\$ModLoad imklog   # provides kernel logging support\n\
+#\$ModLoad imfile # module log for Nginx/g"   /etc/rsyslog.conf
+
+sed -i 's/\$ModLoad imklog   # provides kernel logging support/\$ModLoad imklog   # provides kernel logging support\n\
+\$ModLoad imfile # module log for Nginx/g' /etc/rsyslog.conf
