@@ -1,8 +1,8 @@
 #!/bin/bash
 #############################################################
-# Graylog V1.0
+# Graylog V1.3
 # Ubuntu 14.04.1
-# Update: 04/03/2015
+# Update: 30/12/2015
 # Author: Congto / @tothanhcong
 #############################################################
 # Run with root account  
