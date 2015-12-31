@@ -46,9 +46,18 @@ apt-get -y install git curl build-essential openjdk-7-jre pwgen wget ssh ntp
 echo -e "\033[33m ##### Install elasticsearch ##### \033[0m"
 sleep 3
 sudo apt-get install elasticsearch
+
+cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bak
+
 sed -i -e 's|#cluster.name: elasticsearch|cluster.name: graylog|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#transport.tcp.port: 9300|transport.tcp.port: 9300|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#http.port: 9200|http.port: 9200|' /etc/elasticsearch/elasticsearch.yml
+sed -i -e 's|#transport.tcp.port: 9300|transport.tcp.port: 9300|' /etc/elasticsearch/elasticsearch.yml
+sed -i -e 's|#network.bind_host: 192.168.0.1|network.bind_host: '$IPADD_ETH0'|' /etc/elasticsearch/elasticsearch.yml
+sed -i -e 's|#discovery.zen.ping.multicast.enabled: false|discovery.zen.ping.multicast.enabled: false|' /etc/elasticsearch/elasticsearch.yml
+sed -i -e 's|#discovery.zen.ping.unicast.hosts: \["host1", "host2:port"\]|discovery.zen.ping.unicast.hosts: ['\"$IPADD_ETH0:9300\"']|' /etc/elasticsearch/elasticsearch.yml
+
+
 
 mv /etc/security/limits.conf /etc/security/limits.bak
 grep -Ev "# End of file" /etc/security/limits.bak > /etc/security/limits.conf
@@ -81,6 +90,8 @@ sleep 3
 apt-get install graylog-server graylog-web
 
 echo "##### Config Graylog server #####"
+
+cp /etc/graylog/server/server.conf /etc/graylog/server/server.conf.bak
 pass_secret=$(pwgen -s 96)
 sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/server/server.conf
 admin_hash=$(echo -n $adminpass | shasum -a 256 | awk '{print $1}')
@@ -90,7 +101,7 @@ sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri 
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_cluster_name = graylog2|elasticsearch_cluster_name = graylog|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
-sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 192.168.1.203:9300|elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|' /etc/graylog/server/server.conf
+sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|elasticsearch_discovery_zen_ping_unicast_hosts = '$IPADD_ETH0:9300'|' /etc/graylog/server/server.conf
 sed -i -e 's|mongodb_useauth = true|mongodb_useauth = false|' /etc/graylog/server/server.conf
 sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
 
@@ -101,6 +112,7 @@ while ! nc -vz localhost 12900; do sleep 1; done
 
 echo -e "\033[33m  ##### Configuring Graylog Web interface ##### \033[0m"
 sleep 3
+cp /etc/graylog/web/web.conf /etc/graylog/web/web.conf.bak
 sed -i -e 's|graylog2-server.uris=""|graylog2-server.uris="http://127.0.0.1:12900/"|' /etc/graylog/web/web.conf
 app_secret=$(pwgen -s 96)
 sed -i -e 's|application.secret=""|application.secret="'$app_secret'"|' /etc/graylog/web/web.conf
