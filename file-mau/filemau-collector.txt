@@ -1,0 +1,50 @@
+### /etc/graylog/collector/collector.conf
+
+
+
+server-url = "http://172.16.69.244:12900/"
+collector-id = "file:/etc/graylog/collector/collector-id"
+inputs {
+
+
+apache-acess {
+    type = "file"
+    path = "/var/log/apache2/access.log"
+  }
+
+apache-error {
+  type = "file"
+  path = "/var/log/apache2/error.log"
+}
+
+nova-api {
+    type = "file"
+    path = "/var/log/nova/nova-api.log"
+  }
+
+cinder-api-ctl {
+  type = "file"
+  path = "/var/log/cinder/cinder-api.log"
+}
+
+cinder-scheduler-ctl {
+  type = "file"
+  path = "/var/log/cinder/cinder-scheduler.log"
+}
+
+
+cinder-volume-ctl {
+  type = "file"
+  path = "/var/log/cinder/cinder-volume.log"
+}
+
+
+}
+
+outputs {
+  graylog-server {
+    type = "gelf"
+    host = "172.16.69.244"
+    port = 12201
+  }
+}
