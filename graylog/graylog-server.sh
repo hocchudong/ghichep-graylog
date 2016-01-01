@@ -53,7 +53,7 @@ sed -i -e 's|#cluster.name: elasticsearch|cluster.name: graylog|' /etc/elasticse
 sed -i -e 's|#transport.tcp.port: 9300|transport.tcp.port: 9300|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#http.port: 9200|http.port: 9200|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#transport.tcp.port: 9300|transport.tcp.port: 9300|' /etc/elasticsearch/elasticsearch.yml
-sed -i -e 's|#network.bind_host: 192.168.0.1|network.bind_host: '$IPADD_ETH0'|' /etc/elasticsearch/elasticsearch.yml
+sed -i -e 's|#network.bind_host: 192.168.0.1|network.bind_host: 0.0.0.0|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#discovery.zen.ping.multicast.enabled: false|discovery.zen.ping.multicast.enabled: false|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#discovery.zen.ping.unicast.hosts: \["host1", "host2:port"\]|discovery.zen.ping.unicast.hosts: ['\"$IPADD_ETH0:9300\"']|' /etc/elasticsearch/elasticsearch.yml
 
