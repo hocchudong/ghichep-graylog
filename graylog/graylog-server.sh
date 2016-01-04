@@ -12,9 +12,9 @@
 
 ###############################
 # Get IP Server
-IPADD_ETH0="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+IPADD="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 
-echo -e "\033[33m  ##### Script install Graylog V1.0 (Script cai dat Graylog V1.0) ###### \033[0m"
+echo -e "\033[33m  ##### Script install Graylog V1.x (Script cai dat Graylog V1.x) ###### \033[0m"
 sleep 3
 echo -e "\033[32m  ##### Enter password for Graylog server (Nhap password cho Graylog) ##### \033[0m"
 read -r adminpass
@@ -55,7 +55,7 @@ sed -i -e 's|#http.port: 9200|http.port: 9200|' /etc/elasticsearch/elasticsearch
 sed -i -e 's|#transport.tcp.port: 9300|transport.tcp.port: 9300|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#network.bind_host: 192.168.0.1|network.bind_host: 0.0.0.0|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|#discovery.zen.ping.multicast.enabled: false|discovery.zen.ping.multicast.enabled: false|' /etc/elasticsearch/elasticsearch.yml
-sed -i -e 's|#discovery.zen.ping.unicast.hosts: \["host1", "host2:port"\]|discovery.zen.ping.unicast.hosts: ['\"$IPADD_ETH0:9300\"']|' /etc/elasticsearch/elasticsearch.yml
+sed -i -e 's|#discovery.zen.ping.unicast.hosts: \["host1", "host2:port"\]|discovery.zen.ping.unicast.hosts: ['\"$IPADD:9300\"']|' /etc/elasticsearch/elasticsearch.yml
 
 
 
@@ -85,7 +85,7 @@ echo -e "\033[33m ##### Install sussces MONGODB ##### \033[0m"
 sleep 3
 
 # Download Graylog2 tarballs
-echo -e "\033[33m  ##### Install Graylog V1.0 Server & Graylog V.10 Web##### \033[0m"
+echo -e "\033[33m  ##### Install Graylog V1.x Server & Graylog V1.x Web##### \033[0m"
 sleep 3
 apt-get install graylog-server graylog-web
 
@@ -101,7 +101,7 @@ sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri 
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_cluster_name = graylog2|elasticsearch_cluster_name = graylog|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
-sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|elasticsearch_discovery_zen_ping_unicast_hosts = '$IPADD_ETH0:9300'|' /etc/graylog/server/server.conf
+sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|elasticsearch_discovery_zen_ping_unicast_hosts = '$IPADD:9300'|' /etc/graylog/server/server.conf
 sed -i -e 's|mongodb_useauth = true|mongodb_useauth = false|' /etc/graylog/server/server.conf
 sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
 
@@ -144,7 +144,7 @@ service graylog-web start
 
 #################
 echo -e "\033[32m Setup Complete!"
-echo "You can access Graylog Server by IP $IPADD_ETH0:9000"
+echo "You can access Graylog Server by IP $IPADD:9000"
 echo "User: admin"
 echo "Pass: $adminpass"
 echo -e "\033[0m"
