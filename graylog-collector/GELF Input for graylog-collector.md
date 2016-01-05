@@ -5,7 +5,7 @@ GELF TCP là input chuyên dùng cho Graylog collector, cấu hình như sau
 
 Sau khi launch input mới, ta nhập các thông tin cần thiết vào bảng
 
-<img src="http://i.imgur.com/YpLzICJ.png">
+<img src="http://i.imgur.com/7AILvUm.png">
 <img src="">
 Một số mục cần lưu ý khi nhập thông tin :
 
