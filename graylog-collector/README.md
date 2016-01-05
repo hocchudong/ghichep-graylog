@@ -14,7 +14,7 @@ root@controller:~# apt-get update
 
 root@controller:~# apt-get install openjdk-7-jdk -y
 
-Cài đặt Graylog Collector theo hướng dẫn tại trang chủ : http://docs.graylog.org/en/1.2/pages/collector.html
+###Cài đặt Graylog Collector theo hướng dẫn tại trang chủ : http://docs.graylog.org/en/1.2/pages/collector.html
 
 ####Ví dụ, trên Ubuntu 14.04 : 
 <ul>root@controller:~#sudo wget https://packages.graylog2.org/repo/packages/graylog-collector-latest-repository-ubuntu14.04_latest.deb</ul>
