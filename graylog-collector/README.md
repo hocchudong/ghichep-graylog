@@ -17,11 +17,11 @@ Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
 ###Cài đặt Graylog Collector theo hướng dẫn tại trang chủ : http://docs.graylog.org/en/1.2/pages/collector.html
 
 ####Ví dụ, trên Ubuntu 14.04 : 
-	root@controller:~#sudo wget https://packages.graylog2.org/repo/packages/graylog-collector-latest-repository-ubuntu14.04_latest.deb
-	root@controller:~#sudo dpkg -i graylog-collector-latest-repository-ubuntu14.04_latest.deb
-	root@controller:~#sudo apt-get install apt-transport-https
-	root@controller:~#sudo apt-get update
-	root@controller:~#sudo apt-get install graylog-collector -y
+	root@controller:~#wget https://packages.graylog2.org/repo/packages/graylog-collector-latest-repository-ubuntu14.04_latest.deb
+	root@controller:~#dpkg -i graylog-collector-latest-repository-ubuntu14.04_latest.deb
+	root@controller:~#apt-get install apt-transport-https
+	root@controller:~#apt-get update
+	root@controller:~#apt-get install graylog-collector -y
 
 ###Sau khi chạy các lệnh trên ta cần set $JAVA_HOME như sau : 
 
@@ -57,6 +57,6 @@ Output hiển thị nên là đường dẫn tới thư mục java :
 	root@controller:~#gpasswd -a graylog-collector root
 
 ####Step 6 :Khởi động GraylogCollector
-	root@compute1:~# service graylog-collector start
+	root@controller:~# service graylog-collector start
 Sau khi khởi động, vào web interface của graylog kiểm tra ( chú ý [cấu hình input cho graylog-webinterface](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog-collector/GELF%20Input%20for%20graylog-collector.md) để nhận log từ trước đó )
 * Chú ý : Sử dụng graylog-collector.sh để cài đặt, thì sau khi chạy file xong, vẫn phải vào file cấu hình collector.conf để cấu hình các file log muốn đẩy về.
