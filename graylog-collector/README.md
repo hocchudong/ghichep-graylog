@@ -3,9 +3,10 @@ Graylog Collector là một ứng dụng Java kích thước nhẹ cho phép b�
 
 ###Cách cài đặt Graylog Collector trên Linux
 
-Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra với câu lệnh :
-
-root@Ubuntu:~# java -version
+Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
+root@controller:~# cd /usr/lib/jvm/
+root@controller:/usr/lib/jvm# ll
+<img src="http://i.imgur.com/zAvIbTh.png">
 
 ####Step 1 : Cài đặt Java jdk 7 :
 root@controller:~# apt-get update
