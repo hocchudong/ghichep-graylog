@@ -12,4 +12,4 @@ Chọn định dạng file zip, sau khi dow về thì giả nén vào thư mục
 ####Step 3 : Cài đặt và khởi động GraylogCollector, ta làm như sau :
 <img src="http://i.imgur.com/fyzTDVd.png">
 ####Step 4 : Kiểm tra trên web interface xem Collector đã được đẩy về hay chưa 
-<img src="http://i.imgur.com/1Wyvb9N.png">
+<img src="http://i.imgur.com/z8cVf4L.png">
