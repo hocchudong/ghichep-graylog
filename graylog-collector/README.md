@@ -29,12 +29,17 @@ Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
 	root@controller:~# vi /etc/environment 
 		JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"	( thêm dòng này vào )
 ####Step 3 : Chạy biến
+
 	root@controller:~# source /etc/environment 
+	
 Kiểm tra xem đã thiết lập thành công chưa với câu lệnh :
+
 	root@controller:~# echo $JAVA_HOME 
 	
 Output hiển thị nên là đường dẫn tới thư mục java :
+
 		JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
+		
 ####Step 4 : Cấu hinh GraylogCollector, tại đây ta cấu hình những định dạng log mà ta muốn đẩy về GraylogServer, ví dụ như sau 
 	root@controller:~# vi /etc/graylog/collector/collector.conf
 	server-url = "http://10.0.0.17:12900"
