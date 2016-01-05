@@ -5,6 +5,14 @@ collector-id = "file:/etc/graylog/collector/collector-id"
 
 inputs {
 
+  ssh {
+    type = "file"
+    path = "/var/log/auth.log"
+	message-fields = {
+      "program" = "ssh"
+    }
+  }
+  
   local-syslog {
     type = "file"
     path = "/var/log/syslog"
