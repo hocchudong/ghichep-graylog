@@ -17,11 +17,11 @@ Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
 ###Cài đặt Graylog Collector theo hướng dẫn tại trang chủ : http://docs.graylog.org/en/1.2/pages/collector.html
 
 ####Ví dụ, trên Ubuntu 14.04 : 
-	<ul>root@controller:~#sudo wget 			https://packages.graylog2.org/repo/packages/graylog-collector-latest-repository-ubuntu14.04_latest.deb</ul>
-	<ul>root@controller:~#sudo dpkg -i graylog-collector-latest-repository-ubuntu14.04_latest.deb</ul>
-	<ul>root@controller:~#sudo apt-get install apt-transport-https</ul>
-	<ul>root@controller:~#sudo apt-get update</ul>
-	<ul>root@controller:~#sudo apt-get install graylog-collector -y</ul>
+	root@controller:~#sudo wget https://packages.graylog2.org/repo/packages/graylog-collector-latest-repository-ubuntu14.04_latest.deb
+	root@controller:~#sudo dpkg -i graylog-collector-latest-repository-ubuntu14.04_latest.deb
+	root@controller:~#sudo apt-get install apt-transport-https
+	root@controller:~#sudo apt-get update
+	root@controller:~#sudo apt-get install graylog-collector -y
 
 ###Sau khi chạy các lệnh trên ta cần set $JAVA_HOME như sau : 
 
