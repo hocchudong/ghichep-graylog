@@ -6,7 +6,7 @@ GELF TCP là input chuyên dùng cho Graylog collector, cấu hình như sau
 Sau khi launch input mới, ta nhập các thông tin cần thiết vào bảng
 
 <img src="http://i.imgur.com/7AILvUm.png">
-<img src="">
+<img src="http://i.imgur.com/qLixEKT.png">
 Một số mục cần lưu ý khi nhập thông tin :
 
 <li>	Bind IP : Nhập IP của Graylog-Server  hoặc 0.0.0.0 ( Nếu đặt 0.0.0.0 Graylog server sẽ lắng nghe tất cả các bản tin trả về, chỉ đặt nếu đã thiết lập IPTables)</li>
