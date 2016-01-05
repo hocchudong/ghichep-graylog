@@ -4,4 +4,4 @@ https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8
 
 ####Step 1 : Dowload gói GraylogCollector tại link : https://github.com/Graylog2/collector#binary-download
 Chọn định dạng file zip, sau khi dow về thì giả nén vào thư mục ổ C 
-<img src="http://prntscr.com/9map6f">
+<img src="http://i.imgur.com/qBQD2tD.png">
