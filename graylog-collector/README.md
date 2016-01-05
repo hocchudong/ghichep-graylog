@@ -10,9 +10,9 @@ Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
 
 ####Step 1 : Cài đặt Java jdk 7 :
 
-root@controller:~# apt-get update
-
-root@controller:~# apt-get install openjdk-7-jdk -y
+	root@controller:~# apt-get update
+	
+	root@controller:~# apt-get install openjdk-7-jdk -y
 
 ###Cài đặt Graylog Collector theo hướng dẫn tại trang chủ : http://docs.graylog.org/en/1.2/pages/collector.html
 
@@ -26,17 +26,17 @@ root@controller:~# apt-get install openjdk-7-jdk -y
 ###Sau khi chạy các lệnh trên ta cần set $JAVA_HOME như sau : 
 
 ####Step 2 : Thay biến JAVA_HOME
-	root@compute1:~# vi /etc/environment 
+	root@controller:~# vi /etc/environment 
 		JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"	( thêm dòng này vào )
 ####Step 3 : Chạy biến
-	root@compute1:~# source /etc/environment 
+	root@controller:~# source /etc/environment 
 	Kiểm tra xem đã thiết lập thành công chưa với câu lệnh :
-	root@compute1:~# echo $JAVA_HOME 
+	root@controller:~# echo $JAVA_HOME 
 	
 	Output hiển thị nên là đường dẫn tới thư mục java :
 		JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
 ####Step 4 : Cấu hinh GraylogCollector, tại đây ta cấu hình những định dạng log mà ta muốn đẩy về GraylogServer, ví dụ như sau 
-	root@compute1:~# vi /etc/graylog/collector/collector.conf
+	root@controller:~# vi /etc/graylog/collector/collector.conf
 	server-url = "http://10.0.0.17:12900"
 	collector-id = "file:/etc/graylog/collector/collector-id"
 	inputs {
@@ -52,10 +52,11 @@ root@controller:~# apt-get install openjdk-7-jdk -y
 	    port = 12201
 	  }
 	}
+####Step 5 : Phân quyền cho graylog-collector
+root@controller:~#gpasswd -a graylog-collector adm
+root@controller:~#gpasswd -a graylog-collector root
 
-
-
-####Step 5 :Khởi động GraylogCollector
+####Step 6 :Khởi động GraylogCollector
 	root@compute1:~# service graylog-collector start
 Sau khi khởi động, vào web interface của graylog kiểm tra ( chú ý [cấu hình input cho graylog-webinterface](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog-collector/GELF%20Input%20for%20graylog-collector.md) để nhận log từ trước đó )
 * Chú ý : Sử dụng graylog-collector.sh để cài đặt, thì sau khi chạy file xong, vẫn phải vào file cấu hình collector.conf để cấu hình các file log muốn đẩy về.
