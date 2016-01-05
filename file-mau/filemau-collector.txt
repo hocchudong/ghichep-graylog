@@ -1,50 +1,86 @@
-### /etc/graylog/collector/collector.conf
-
-
-
-server-url = "http://172.16.69.244:12900/"
+server-url = "http://172.16.69.212:12900/"
 collector-id = "file:/etc/graylog/collector/collector-id"
+
 inputs {
 
+  local-syslog {
+    type = "file"
+    path = "/var/log/syslog"
+	message-fields = {
+      "program" = "syslog"
+    }
+  }
 
-apache-acess {
+  apache-acess {
     type = "file"
     path = "/var/log/apache2/access.log"
+	message-fields = {
+      "program" = "apache"
+    }
   }
 
-apache-error {
-  type = "file"
-  path = "/var/log/apache2/error.log"
-}
+  apache-error {
+    type = "file"
+    path = "/var/log/apache2/error.log"
+	message-fields = {
+      "program" = "apache"
+    }
+  }
 
-nova-api {
+  nova-api {
     type = "file"
     path = "/var/log/nova/nova-api.log"
+	message-fields = {
+      "program" = "nova-api"
+    }
   }
 
-cinder-api-ctl {
-  type = "file"
-  path = "/var/log/cinder/cinder-api.log"
-}
+  cinder-api-ctl {
+    type = "file"
+    path = "/var/log/cinder/cinder-api.log"
+	message-fields = {
+      "program" = "cinder-api-ctl"
+    }
+  }
 
-cinder-scheduler-ctl {
-  type = "file"
-  path = "/var/log/cinder/cinder-scheduler.log"
-}
+  cinder-scheduler-ctl {
+    type = "file"
+    path = "/var/log/cinder/cinder-scheduler.log"
+	message-fields = {
+      "program" = "cinder-scheduler-ctl"
+    }
+  }
 
+  cinder-volume-ctl {
+    type = "file"
+    path = "/var/log/cinder/cinder-volume.log"
+	message-fields = {
+      "program" = "cinder-volume-ctl"
+    }
+  }
 
-cinder-volume-ctl {
-  type = "file"
-  path = "/var/log/cinder/cinder-volume.log"
-}
-
-
+  glance-api {
+    type = "file"
+    path = "/var/log/glance/glance-api.log"
+	message-fields = {
+      "program" = "glance-api"
+    }
+  }
+  
+  glance-registry {
+    type = "file"
+    path = "/var/log/glance/glance-registry.log"
+	message-fields = {
+      "program" = "glance-registry"
+    }
+  }
+  
 }
 
 outputs {
   graylog-server {
     type = "gelf"
-    host = "172.16.69.244"
+    host = "172.16.69.212"
     port = 12201
   }
 }
