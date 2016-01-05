@@ -9,6 +9,7 @@ root@controller:/usr/lib/jvm# ll
 <img src="http://i.imgur.com/zAvIbTh.png">
 
 ####Step 1 : Cài đặt Java jdk 7 :
+
 root@controller:~# apt-get update
 root@controller:~# apt-get install openjdk-7-jdk -y
 
