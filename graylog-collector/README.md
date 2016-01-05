@@ -17,11 +17,11 @@ Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
 ###Cài đặt Graylog Collector theo hướng dẫn tại trang chủ : http://docs.graylog.org/en/1.2/pages/collector.html
 
 ####Ví dụ, trên Ubuntu 14.04 : 
-<ul>root@controller:~#sudo wget https://packages.graylog2.org/repo/packages/graylog-collector-latest-repository-ubuntu14.04_latest.deb</ul>
-<ul>root@controller:~#sudo dpkg -i graylog-collector-latest-repository-ubuntu14.04_latest.deb</ul>
-<ul>root@controller:~#sudo apt-get install apt-transport-https</ul>
-<ul>root@controller:~#sudo apt-get update</ul>
-<ul>root@controller:~#sudo apt-get install graylog-collector -y</ul>
+	<ul>root@controller:~#sudo wget 			https://packages.graylog2.org/repo/packages/graylog-collector-latest-repository-ubuntu14.04_latest.deb</ul>
+	<ul>root@controller:~#sudo dpkg -i graylog-collector-latest-repository-ubuntu14.04_latest.deb</ul>
+	<ul>root@controller:~#sudo apt-get install apt-transport-https</ul>
+	<ul>root@controller:~#sudo apt-get update</ul>
+	<ul>root@controller:~#sudo apt-get install graylog-collector -y</ul>
 
 ###Sau khi chạy các lệnh trên ta cần set $JAVA_HOME như sau : 
 
@@ -30,10 +30,10 @@ Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
 		JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"	( thêm dòng này vào )
 ####Step 3 : Chạy biến
 	root@controller:~# source /etc/environment 
-	Kiểm tra xem đã thiết lập thành công chưa với câu lệnh :
+Kiểm tra xem đã thiết lập thành công chưa với câu lệnh :
 	root@controller:~# echo $JAVA_HOME 
 	
-	Output hiển thị nên là đường dẫn tới thư mục java :
+Output hiển thị nên là đường dẫn tới thư mục java :
 		JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
 ####Step 4 : Cấu hinh GraylogCollector, tại đây ta cấu hình những định dạng log mà ta muốn đẩy về GraylogServer, ví dụ như sau 
 	root@controller:~# vi /etc/graylog/collector/collector.conf
@@ -53,8 +53,8 @@ Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
 	  }
 	}
 ####Step 5 : Phân quyền cho graylog-collector
-root@controller:~#gpasswd -a graylog-collector adm
-root@controller:~#gpasswd -a graylog-collector root
+	root@controller:~#gpasswd -a graylog-collector adm
+	root@controller:~#gpasswd -a graylog-collector root
 
 ####Step 6 :Khởi động GraylogCollector
 	root@compute1:~# service graylog-collector start
