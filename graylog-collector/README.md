@@ -54,5 +54,5 @@ Cài đặt Graylog Collector theo hướng dẫn tại trang chủ : http://doc
 
 ####Step 5 :Khởi động GraylogCollector
 	root@compute1:~# service graylog-collector start
-Sau khi khởi động, vào web interface của graylog kiểm tra ( chú ý cấu hình input cho graylog server để nhận log từ trước đó )
+Sau khi khởi động, vào web interface của graylog kiểm tra ( chú ý [cấu hình input cho graylog-webinterface](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog-collector/GELF%20Input%20for%20graylog-collector.md) để nhận log từ trước đó )
 * Chú ý : Sử dụng graylog-collector.sh để cài đặt, thì sau khi chạy file xong, vẫn phải vào file cấu hình collector.conf để cấu hình các file log muốn đẩy về.
