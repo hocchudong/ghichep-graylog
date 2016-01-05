@@ -11,6 +11,7 @@ Máy cài đặt Graylog Collector phải có Java >= 7, kiểm tra :
 ####Step 1 : Cài đặt Java jdk 7 :
 
 root@controller:~# apt-get update
+
 root@controller:~# apt-get install openjdk-7-jdk -y
 
 Cài đặt Graylog Collector theo hướng dẫn tại trang chủ : http://docs.graylog.org/en/1.2/pages/collector.html
