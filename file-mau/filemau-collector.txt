@@ -1,3 +1,5 @@
+// wget -O /etc/graylog/collector/collector.conf https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/file-mau/filemau-collector.txt
+
 server-url = "http://172.16.69.212:12900/"
 collector-id = "file:/etc/graylog/collector/collector-id"
 
@@ -34,7 +36,55 @@ inputs {
       "program" = "nova-api"
     }
   }
+  
+  nova-scheduler {
+    type = "file"
+    path = "/var/log/nova/nova-scheduler.log"
+	message-fields = {
+      "program" = "nova-scheduler"
+    }
+  }
 
+  nova-conductor {
+    type = "file"
+    path = "/var/log/nova/nova-conductor.log"
+	message-fields = {
+      "program" = "nova-conductor"
+    }
+  }
+
+  nova-cert {
+    type = "file"
+    path = "/var/log/nova/nova-cert.log"
+	message-fields = {
+      "program" = "nova-cert"
+    }
+  }  
+  
+  nova-novncproxy {
+    type = "file"
+    path = "/var/log/nova/nova-novncproxy.log"
+	message-fields = {
+      "program" = "nova-novncproxy"
+    }
+  }  
+  
+  nova-consoleauth {
+    type = "file"
+    path = "/var/log/nova/nova-consoleauth.log"
+	message-fields = {
+      "program" = "nova-consoleauth"
+    }
+  } 
+
+  neutron-server {
+    type = "file"
+    path = "/var/log/neutron/neutron-server.log"
+	message-fields = {
+      "program" = "neutron-server"
+    }
+  }
+  
   cinder-api-ctl {
     type = "file"
     path = "/var/log/cinder/cinder-api.log"
