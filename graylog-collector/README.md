@@ -1,5 +1,5 @@
 ###Giới thiệu
-Graylog Collector là một ứng dụng Java kích thước nhẹ cho phép bạn chỏ data từ log files tới một Graylog Cluster. Collector có thể đọc log files local và Window Event.
+Graylog Collector là một ứng dụng Java kích thước nhẹ cho phép bạn chỏ cụ thể data từ log files tới một Graylog Cluster. Collector có thể đọc log files local ( Ví dụ apache, openvpn,...), nói chung bất cứ dịch vụ nào có ghi log  và cả trên Window.
 
 ###Cách cài đặt Graylog Collector trên Linux
 
