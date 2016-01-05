@@ -10,6 +10,6 @@ Chọn định dạng file zip, sau khi dow về thì giả nén vào thư mục
 <ul>Trong file cấu hình, thiết lập các bản tin log muốn đẩy về, ví dụ như sau</ul>
 <img src="http://i.imgur.com/CNCYbjp.png">
 ####Step 3 : Cài đặt và khởi động GraylogCollector, ta làm như sau :
-<img src="http://i.imgur.com/fyzTDVd.png">
+<img src="http://i.imgur.com/8e677qU.png">
 ####Step 4 : Kiểm tra trên web interface xem Collector đã được đẩy về hay chưa 
 <img src="http://i.imgur.com/z8cVf4L.png">
