@@ -50,7 +50,7 @@ Failed password for invalid user adfsdf from 172.16.69.1 port 14026 ssh2
 ![Minh họa](http://i.imgur.com/xcXWOi0.png)
 
 
-### Lọc ký user trong các bản tin ssh fail 
+#### Lọc ký user trong các bản tin ssh fail cách 2 (Cách này ổn)
 
 - Bản tin mẫu
 ```sh 
@@ -67,7 +67,7 @@ Jan  6 18:58:23 controller sshd[22699]: Failed password for invalid user tothanh
 ![Minh họa](http://i.imgur.com/sSVQE4Z.png)
 
 
-* Lấy ra code http trong bản tin sau
+#### Lấy ra code http trong bản tin sau
 
 ```sh
 - Bản tin
