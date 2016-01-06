@@ -50,7 +50,7 @@ Failed password for invalid user adfsdf from 172.16.69.1 port 14026 ssh2
 ![Minh họa](http://i.imgur.com/xcXWOi0.png)
 
 
-#### Lọc ký user trong các bản tin ssh fail cách 2 (Cách này ổn)
+#### Lọc ký user trong các bản tin ssh fail cách 2 (Cách này để lọc cả user root)
 
 - Bản tin mẫu
 ```sh 
