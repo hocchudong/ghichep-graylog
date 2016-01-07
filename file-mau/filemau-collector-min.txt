@@ -1,4 +1,4 @@
-// wget -O /etc/graylog/collector/collector.conf https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/file-mau/filemau-collector.txt
+// wget -O /etc/graylog/collector/collector.conf https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/file-mau/filemau-collector-min.txt
 
 server-url = "http://172.16.69.212:12900/"
 collector-id = "file:/etc/graylog/collector/collector-id"
