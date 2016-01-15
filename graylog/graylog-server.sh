@@ -113,7 +113,7 @@ while ! nc -vz localhost 12900; do sleep 1; done
 echo -e "\033[33m  ##### Configuring Graylog Web interface ##### \033[0m"
 sleep 3
 cp /etc/graylog/web/web.conf /etc/graylog/web/web.conf.bak
-sed -i -e 's|graylog2-server.uris=""|graylog2-server.uris="http://127.0.0.1:12900/"|' /etc/graylog/web/web.conf
+sed -i -e 's|graylog2-server.uris=""|graylog2-server.uris="http://0.0.0.0s:12900/"|' /etc/graylog/web/web.conf
 app_secret=$(pwgen -s 96)
 sed -i -e 's|application.secret=""|application.secret="'$app_secret'"|' /etc/graylog/web/web.conf
 sed -i -e 's|# timezone="Europe/Berlin"|timezone="Asia/Ho_Chi_Minh"|' /etc/graylog/web/web.conf
