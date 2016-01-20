@@ -98,6 +98,8 @@ admin_hash=$(echo -n $adminpass | shasum -a 256 | awk '{print $1}')
 sed -i -e "s|root_password_sha2 =|root_password_sha2 = $admin_hash|" /etc/graylog/server/server.conf
 sed -i 's|#root_timezone = UTC|root_timezone = Asia/Ho_Chi_Minh|' /etc/graylog/server/server.conf
 sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri = http://0.0.0.0:12900/|' /etc/graylog/server/server.conf
+sed -i -e 's|rest_listen_uri = http://127.0.0.1:12900/|rest_listen_uri = http://0.0.0.0:12900/|' /etc/graylog/server/server.conf
+
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_cluster_name = graylog2|elasticsearch_cluster_name = graylog|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
