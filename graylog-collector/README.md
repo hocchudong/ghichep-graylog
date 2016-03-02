@@ -66,4 +66,5 @@ Output hiển thị nên là đường dẫn tới thư mục java :
 Sau khi khởi động, vào web interface của graylog kiểm tra ( chú ý [cấu hình input cho graylog-webinterface](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog-collector/GELF%20Input%20for%20graylog-collector.md) để nhận log từ trước đó )
 * Chú ý : 
 * 1. Sử dụng graylog-collector.sh để cài đặt, thì sau khi chạy file xong, vẫn phải vào file cấu hình collector.conf để cấu hình các file log muốn đẩy về.
-* 2. Với Ubuntu 12.04, khi cài đặt collector thì phải phân quyền thư mục đọc log với quyền 644 <img src="http://i.imgur.com/PNa6o6Z.png">
+* 2. Với Ubuntu 12.04, khi cài đặt collector thì phải phân quyền thư mục đọc log với quyền 644 
+Ví dụ : Khi muốn đọc log từ /var/log/syslog, cần phân quyền như sau <img src="http://i.imgur.com/PNa6o6Z.png">
