@@ -1,0 +1,42 @@
+
+server-url = "http://IP_MAY_GRAYLOG:12900"
+
+
+collector-id = "file:/etc/graylog/collector/collector-id"
+
+inputs {
+
+  ssh {
+    type = "file"
+    path = "/var/log/auth.log"
+        message-fields = {
+      "program" = "ssh"
+    }
+  }
+
+   openvpn {
+    type = "file"
+    path = "/var/log/openvpn.log"
+        message-fields = {
+      "program" = "openvpn"
+    }
+  }
+  
+  openvpn-status {
+    type = "file"
+    path = "/var/log/openvpn-status.log"
+        message-fields = {
+      "program" = "openvpn"
+    }
+  }
+
+}
+
+
+outputs {
+  graylog-server {
+    type = "gelf"
+    host = "IP_MAY_GRAYLOG"
+    port = 12201
+  }
+}
