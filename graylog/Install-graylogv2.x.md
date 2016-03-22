@@ -76,6 +76,8 @@ cp graylog.conf.example /etc/graylog/server/server.conf
  pwgen -N 1 -s 96
  echo -n yourpassword | shasum -a 256
  <img src="http://i.imgur.com/wvBoSso.png">
+ 
+  - Chỉnh sửa file cấu hình Graylog
 ## Thay password_secret va admin's password voi cac gia tri tuong ung duoc tao ra
 ## Thay dia chi IP cua may chu vao bien IPADD
 sed -i -e 's|password_secret =|password_secret = *password_secret*|' /etc/graylog/server/server.conf
@@ -88,6 +90,6 @@ sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/se
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|elasticsearch_discovery_zen_ping_unicast_hosts = IPADD:9300|' /etc/graylog/server/server.conf
 
-Khởi động dịch vụ :
+- Khởi động dịch vụ :
 cd graylog-2.0.0-alpha.5/bin/
 ./graylogctl start
