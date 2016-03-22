@@ -10,4 +10,6 @@ Người tổng hợp : CongTo, ManhDv
    
   - [2.3 Graylog Web-Interface](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog/graylog-collector)
    
+  - [2.4 Hướng dẫn cài đặt Graylog 2.x](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/Install-graylogv2.x.md)
+  - 
 - [3. Graylog 2](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog2)
