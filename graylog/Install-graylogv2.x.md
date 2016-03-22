@@ -61,14 +61,16 @@ source /etc/environment
 #### Graylog 2.x
 
 ```sh
-
+# Tải gói Graylog
 wget https://packages.graylog2.org/releases/graylog/graylog-2.0.0-alpha.1.tgz
 tar xvfz graylog-2.0.0-alpha.1.tgz
 cd graylog-2.0.0-alpha.5/
+
  - Tạo thư mục cho config cho Graylog
 mkdir /etc/graylog/
 mkdir /etc/graylog/server/
 cp graylog.conf.example /etc/graylog/server/server.conf
+
  - Cấu hình cho Graylog Server
  Tạo password_secret và password cho admin
  pwgen -N 1 -s 96
@@ -85,6 +87,7 @@ sed -i -e 's|retention_strategy = delete|retention_strategy = close|' /etc/grayl
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|elasticsearch_discovery_zen_ping_unicast_hosts = IPADD:9300|' /etc/graylog/server/server.conf
+
 Khởi động dịch vụ :
 cd graylog-2.0.0-alpha.5/bin/
 ./graylogctl start
