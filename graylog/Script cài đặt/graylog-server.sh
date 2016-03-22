@@ -97,9 +97,7 @@ sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/s
 admin_hash=$(echo -n $adminpass | shasum -a 256 | awk '{print $1}')
 sed -i -e "s|root_password_sha2 =|root_password_sha2 = $admin_hash|" /etc/graylog/server/server.conf
 sed -i 's|#root_timezone = UTC|root_timezone = Asia/Ho_Chi_Minh|' /etc/graylog/server/server.conf
-sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri = http://0.0.0.0:12900/|' /etc/graylog/server/server.conf
-sed -i -e 's|rest_listen_uri = http://127.0.0.1:12900/|rest_listen_uri = http://0.0.0.0:12900/|' /etc/graylog/server/server.conf
-
+sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri = http://127.0.0.1:12900/|' /etc/graylog/server/server.conf
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_cluster_name = graylog2|elasticsearch_cluster_name = graylog|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
@@ -115,7 +113,7 @@ while ! nc -vz localhost 12900; do sleep 1; done
 echo -e "\033[33m  ##### Configuring Graylog Web interface ##### \033[0m"
 sleep 3
 cp /etc/graylog/web/web.conf /etc/graylog/web/web.conf.bak
-sed -i -e 's|graylog2-server.uris=""|graylog2-server.uris="http://0.0.0.0:12900/"|' /etc/graylog/web/web.conf
+sed -i -e 's|graylog2-server.uris=""|graylog2-server.uris="http://127.0.0.1:12900/"|' /etc/graylog/web/web.conf
 app_secret=$(pwgen -s 96)
 sed -i -e 's|application.secret=""|application.secret="'$app_secret'"|' /etc/graylog/web/web.conf
 sed -i -e 's|# timezone="Europe/Berlin"|timezone="Asia/Ho_Chi_Minh"|' /etc/graylog/web/web.conf
