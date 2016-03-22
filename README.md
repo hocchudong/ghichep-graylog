@@ -12,7 +12,7 @@ Người tổng hợp : CongTo, Manhdv
     
     - [2.3 Graylog-Web interface](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog/graylog-web%20interface)
    
-    - [2.4 Image](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog/images)
+    - [2.4 Images](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog/images)
     
  -  [3. Graylog2](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog2)
   
