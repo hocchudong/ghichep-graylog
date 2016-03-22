@@ -1,0 +1,144 @@
+// wget -O /etc/graylog/collector/collector.conf https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/file-mau/filemau-collector.txt
+
+server-url = "http://172.16.69.212:12900/"
+collector-id = "file:/etc/graylog/collector/collector-id"
+
+inputs {
+
+  ssh {
+    type = "file"
+    path = "/var/log/auth.log"
+	message-fields = {
+      "program" = "ssh"
+    }
+  }
+  
+  local-syslog {
+    type = "file"
+    path = "/var/log/syslog"
+	message-fields = {
+      "program" = "syslog"
+    }
+  }
+
+  apache-acess {
+    type = "file"
+    path = "/var/log/apache2/access.log"
+	message-fields = {
+      "program" = "apache"
+    }
+  }
+
+  apache-error {
+    type = "file"
+    path = "/var/log/apache2/error.log"
+	message-fields = {
+      "program" = "apache"
+    }
+  }
+
+  nova-api {
+    type = "file"
+    path = "/var/log/nova/nova-api.log"
+	message-fields = {
+      "program" = "nova-api"
+    }
+  }
+  
+  nova-scheduler {
+    type = "file"
+    path = "/var/log/nova/nova-scheduler.log"
+	message-fields = {
+      "program" = "nova-scheduler"
+    }
+  }
+
+  nova-conductor {
+    type = "file"
+    path = "/var/log/nova/nova-conductor.log"
+	message-fields = {
+      "program" = "nova-conductor"
+    }
+  }
+
+  nova-cert {
+    type = "file"
+    path = "/var/log/nova/nova-cert.log"
+	message-fields = {
+      "program" = "nova-cert"
+    }
+  }  
+  
+  nova-novncproxy {
+    type = "file"
+    path = "/var/log/nova/nova-novncproxy.log"
+	message-fields = {
+      "program" = "nova-novncproxy"
+    }
+  }  
+  
+  nova-consoleauth {
+    type = "file"
+    path = "/var/log/nova/nova-consoleauth.log"
+	message-fields = {
+      "program" = "nova-consoleauth"
+    }
+  } 
+
+  neutron-server {
+    type = "file"
+    path = "/var/log/neutron/neutron-server.log"
+	message-fields = {
+      "program" = "neutron-server"
+    }
+  }
+  
+  cinder-api-ctl {
+    type = "file"
+    path = "/var/log/cinder/cinder-api.log"
+	message-fields = {
+      "program" = "cinder-api-ctl"
+    }
+  }
+
+  cinder-scheduler-ctl {
+    type = "file"
+    path = "/var/log/cinder/cinder-scheduler.log"
+	message-fields = {
+      "program" = "cinder-scheduler-ctl"
+    }
+  }
+
+  cinder-volume-ctl {
+    type = "file"
+    path = "/var/log/cinder/cinder-volume.log"
+	message-fields = {
+      "program" = "cinder-volume-ctl"
+    }
+  }
+
+  glance-api {
+    type = "file"
+    path = "/var/log/glance/glance-api.log"
+	message-fields = {
+      "program" = "glance-api"
+    }
+  }
+  
+  glance-registry {
+    type = "file"
+    path = "/var/log/glance/glance-registry.log"
+	message-fields = {
+      "program" = "glance-registry"
+    }
+  }
+  
+}
+
+outputs {
+  graylog-server {
+    type = "gelf"
+    host = "172.16.69.212"
+    port = 12201
+  }
+}

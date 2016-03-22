@@ -1,0 +1,32 @@
+// wget -O /etc/graylog/collector/collector.conf https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/file-mau/filemau-collector-min.txt
+
+server-url = "http://172.16.69.212:12900/"
+collector-id = "file:/etc/graylog/collector/collector-id"
+
+inputs {
+
+  ssh {
+    type = "file"
+    path = "/var/log/auth.log"
+	message-fields = {
+      "program" = "ssh"
+    }
+  }
+  
+  local-syslog {
+    type = "file"
+    path = "/var/log/syslog"
+	message-fields = {
+      "program" = "syslog"
+    }
+  }
+  
+}
+
+outputs {
+  graylog-server {
+    type = "gelf"
+    host = "172.16.69.212"
+    port = 12201
+  }
+}
