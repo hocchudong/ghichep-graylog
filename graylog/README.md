@@ -1,12 +1,12 @@
-# Script install GRAYLOG V.10
+# Script install GRAYLOG V.1.3
 
 ### INFO
 ```sh
-# Graylog V1.0
-# Elasticsearch 1.4.4
-# MongoDB 2.6.8
-# Ubuntu 14.04.1
-# Update: 03/03/2015
+# Graylog V1.3
+# Elasticsearch 1.7
+# MongoDB 2.6.11
+# Ubuntu 14.04.2
+# Update: 13/03/2016
 ```
 
 #### DIAGRAM LAB
