@@ -1,4 +1,4 @@
-# Script install GRAYLOG V.1.3
+# Mô hình script install GRAYLOG V.1.3
 
 ### INFO
 ```sh
@@ -17,14 +17,14 @@
 *** 
 - Graylog on Server 
 ```sh
-wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-server.sh
+wget https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-server.sh
 bash graylog-server.sh
 
 ```
 
 - Graylog for client 1 (Ubuntu)
 ```sh
-wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-client-ubuntu.sh
+wget https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-client-ubuntu.sh
 bash graylog-client-ubuntu.sh
 ```
 
