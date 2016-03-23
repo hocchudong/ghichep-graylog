@@ -16,4 +16,4 @@ Người tổng hợp : CongTo, Manhdv
     
  -  [3. Graylog2](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog2)
   
- -  [4. Hướng dẫn cài đặt Graylog 2.x](https://github.com/manhdinh/ghichep-graylog/blob/master/install-graylogv2.x.md)
+
