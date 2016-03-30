@@ -31,10 +31,10 @@ Graylog 2.0 cho phép bạn chuyển một index cũ thành một tập tin dư�
 ###Stream Filter
 - Một tính năng mới giúp bạn lọc các stream cần tìm bằng cách tìm kiếm bằng tittle hoặc description.
 
-###Search *surrounding* messages - Tìm kiếm xung quanh bản tin log
+###Search surrounding messages - Tìm kiếm xung quanh bản tin log
 - Khi bạn đặc biệt quan tâm đến một event có trong một bản tin log nào đó, chức năng này giúp bạn tìm kiếm thêm các bản tin liên quan đến event đó. Các bản tin xảy ra ngay trước hoặc ngay sau event, hoặc xảy ra cùng thời điểm liên quan đến event này.
 
-###Query *range limit* - Ngưỡng tìm kiếm
+###Query range limit - Ngưỡng tìm kiếm
 - Với Graylog 2.0, bạn có thể đặt khoảng thời gian giới hạn cho việc tìm kiếm các bản tin. Ví dụ, bạn đặt cho các bản tin log này ngưỡng tìm kiếm là 2 tháng. Thì sau 2 tháng, không ai có thể tìm kiếm được các bản tin log này.
 - Thời gian tìm kiếm có thể tùy chỉnh lên đến tối đa là 90 ngày ( trước là 30 ngày ).
 
