@@ -5,14 +5,14 @@
 - Graylog-web-interface được hợp nhất Graylog-server, code của web-interface được viết lại dưới dạng react.js
 - Việc tích hợp giúp Graylog web interface có thể tương tác với các *plugin*, tạo khả năng mở rộng và tùy biến mạnh mẽ.
 
-###Đã support được *Elasticsearch version 2.x* trở lên.
+###Đã support được Elasticsearch version 2.x trở lên.
 - Graylog 2.0 chỉ sử dụng Elasticsearch 2.x trở lên. Hãy chú ý rằng Elasticsearch không hỡ trợ việc downgrade, vì vậy hãy cẩn thận trong việc upgrade Elasticsearch v1.x lên v2.x.
  
-###Sử dụng cơ chế *Tail -f* với các bản tin
+###Sử dụng cơ chế `Tail -f` với các bản tin
 - Với Graylog 2.0, các bản tin log mới nhất sẽ được liên tục tự động cập nhập trên web-interface. 
 - Ta có thể chỉnh sửa thời gian cập nhập cho các bản tin mới ( 1-5-10-30s, 5-10-30m... ).
 
-###Cơ chế xử lý log message : *Pipline*
+###Cơ chế xử lý log message : `Pipline`
 - Cơ chế mới Pipline cho phép bạn viết ra các rule và phối hợp các rule đó để xử lý các message truyền vào.
 - Bạn có thể viết một plugin để mở rộng khả năng phổi hợp các rule của pipline, giúp tối đa hóa công suất của hệ thống bằng việc định tuyển, lọc, phân luồng bản tin.
 
