@@ -39,4 +39,4 @@ Graylog 2.0 cho phép bạn chuyển một index cũ thành một tập tin dư�
 - Thời gian tìm kiếm có thể tùy chỉnh lên đến tối đa là 90 ngày ( trước là 30 ngày ).
 
 
-Trên đây là một số tính năng tiêu biểu có trong bản Graylog 2.0 Beta 1 !
+####Trên đây là một số tính năng tiêu biểu có trong bản Graylog 2.0 Beta 1 !
