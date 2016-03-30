@@ -18,6 +18,7 @@
 
 ###Map widget
 - Tính năng mới giúp bạn visualize các địa chỉ IP lên map. Việc này dựa trên cơ chế phân giải địa chỉ IP thành một vị trí địa lý gần đúng trên bản đồ. ( Giống với tính năng GeoIP trên ELK )
+
 ###Archiving Index
 - Graylog trước kia cho phép bạn cấu hình để tự động delete những bản tin log cũ nhằm làm nhẹ hệ thống. Tuy nhiên với những khách hàng vẫn muốn lưu trữ những bản tin cũ, nhưng lại không muốn tăng chi phí để nâng cao cấu hình phần cứng cho hệ thống thì sao?
 
@@ -37,4 +38,4 @@ Graylog 2.0 cho phép bạn chuyển một index cũ thành một tập tin dư�
 - Với Graylog 2.0, bạn có thể đặt khoảng thời gian giới hạn cho việc tìm kiếm các bản tin. Ví dụ, bạn đặt cho các bản tin log này ngưỡng tìm kiếm là 2 tháng. Thì sau 2 tháng, không ai có thể tìm kiếm được các bản tin log này.
 - Thời gian tìm kiếm có thể tùy chỉnh lên đến tối đa là 90 ngày ( trước là 30 ngày ).
 
-Đây là một số tính năng tiêu biểu có trong bản Graylog 2.0 Beta1 !
+Trên đây là một số tính năng tiêu biểu có trong bản Graylog 2.0 Beta 1 !
