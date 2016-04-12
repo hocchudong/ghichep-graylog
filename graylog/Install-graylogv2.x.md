@@ -69,6 +69,8 @@ cd graylog-2.0.0-alpha.5/
 mkdir /etc/graylog/
 mkdir /etc/graylog/server/
 cp graylog.conf.example /etc/graylog/server/server.conf
+```
+
  - Cấu hình cho Graylog Server
  Tạo password_secret và password cho admin
  pwgen -N 1 -s 96
