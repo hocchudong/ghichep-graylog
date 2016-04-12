@@ -77,7 +77,7 @@ cp graylog.conf.example /etc/graylog/server/server.conf
  pwgen -N 1 -s 96
  echo -n yourpassword | shasum -a 256
  ```
- <img src="http://i.imgur.com/wvBoSso.png">
+ <img src="http://i.imgur.com/vnufKHD.png">
 ```sh
 ## Thay password_secret va admin's password voi cac gia tri tuong ung duoc tao ra
 ## Thay dia chi IP cua may chu vao bien IPADD
