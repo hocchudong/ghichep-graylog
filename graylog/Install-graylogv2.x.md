@@ -61,23 +61,24 @@ source /etc/environment
 #### Graylog 2.x
 
 ```sh
-
 wget https://packages.graylog2.org/releases/graylog/graylog-2.0.0-alpha.1.tgz
 tar xvfz graylog-2.0.0-alpha.1.tgz
 cd graylog-2.0.0-alpha.5/
+```
  - Tạo thư mục cho config cho Graylog
+```sh
 mkdir /etc/graylog/
 mkdir /etc/graylog/server/
 cp graylog.conf.example /etc/graylog/server/server.conf
 ```
-
  - Cấu hình cho Graylog Server
+```sh
  Tạo password_secret và password cho admin
  pwgen -N 1 -s 96
  echo -n yourpassword | shasum -a 256
  
  <img src="http://i.imgur.com/wvBoSso.png">
- 
+```
 ## Thay password_secret va admin's password voi cac gia tri tuong ung duoc tao ra
 ## Thay dia chi IP cua may chu vao bien IPADD
 sed -i -e 's|password_secret =|password_secret = *password_secret*|' /etc/graylog/server/server.conf
