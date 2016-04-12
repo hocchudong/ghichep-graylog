@@ -59,7 +59,7 @@ source /etc/environment
 
 
 #### Graylog 2.x
-
+ - Dowload gói Graylog và giải nén
 ```sh
 wget https://packages.graylog2.org/releases/graylog/graylog-2.0.0-alpha.1.tgz
 tar xvfz graylog-2.0.0-alpha.1.tgz
