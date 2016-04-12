@@ -6,7 +6,7 @@ Người tổng hợp : CongTo, Manhdv
   
  -  [2. Graylog](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog)
   
-    - [2.1 Graylog-Scripts](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog/Graylog-Scripts)
+    - [2.1 Graylog-Scripts](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog/graylog-scripts)
     
     - [2.2 Graylog-Collector](https://github.com/manhdinh/ghichep-graylog/tree/master/graylog/graylog-collector)
     

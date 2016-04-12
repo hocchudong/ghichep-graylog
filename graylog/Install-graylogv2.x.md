@@ -27,7 +27,7 @@ update-rc.d elasticsearch defaults
 
 
 
-#### For MongoDB
+#### Cài đặt MongoDB
 
 ```sh
 apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
@@ -45,7 +45,7 @@ echo -e "Install sussces MONGODB"
 
 ```
 
-#### JAVA 
+#### Cài đặt JAVA 
 ```sh
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
@@ -59,21 +59,26 @@ source /etc/environment
 
 
 #### Graylog 2.x
-
+ - Dowload gói Graylog và giải nén
 ```sh
-
 wget https://packages.graylog2.org/releases/graylog/graylog-2.0.0-alpha.1.tgz
 tar xvfz graylog-2.0.0-alpha.1.tgz
 cd graylog-2.0.0-alpha.5/
+```
  - Tạo thư mục cho config cho Graylog
+```sh
 mkdir /etc/graylog/
 mkdir /etc/graylog/server/
 cp graylog.conf.example /etc/graylog/server/server.conf
+```
  - Cấu hình cho Graylog Server
+```sh
  Tạo password_secret và password cho admin
  pwgen -N 1 -s 96
  echo -n yourpassword | shasum -a 256
- <img src="http://i.imgur.com/wvBoSso.png">
+ ```
+ <img src="http://i.imgur.com/vnufKHD.png">
+```sh
 ## Thay password_secret va admin's password voi cac gia tri tuong ung duoc tao ra
 ## Thay dia chi IP cua may chu vao bien IPADD
 sed -i -e 's|password_secret =|password_secret = *password_secret*|' /etc/graylog/server/server.conf
@@ -85,6 +90,9 @@ sed -i -e 's|retention_strategy = delete|retention_strategy = close|' /etc/grayl
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|elasticsearch_discovery_zen_ping_unicast_hosts = IPADD:9300|' /etc/graylog/server/server.conf
-Khởi động dịch vụ :
+```
+ - Khởi động dịch vụ :
+```sh
 cd graylog-2.0.0-alpha.5/bin/
 ./graylogctl start
+```
