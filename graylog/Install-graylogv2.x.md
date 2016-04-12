@@ -27,7 +27,7 @@ update-rc.d elasticsearch defaults
 
 
 
-#### For MongoDB
+#### Cài đặt MongoDB
 
 ```sh
 apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
@@ -45,7 +45,7 @@ echo -e "Install sussces MONGODB"
 
 ```
 
-#### JAVA 
+#### Cài đặt JAVA 
 ```sh
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
