@@ -50,10 +50,14 @@ echo -e "Install sussces MONGODB"
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk
-Sửa JAVA_HOME
+```
+ - Sửa JAVA_HOME
+```sh
 /etc/environment
 	JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-Chạy biến : 
+```
+ - Chạy biến : 
+```sh
 source /etc/environment
 ```
 
@@ -72,8 +76,9 @@ mkdir /etc/graylog/server/
 cp graylog.conf.example /etc/graylog/server/server.conf
 ```
  - Cấu hình cho Graylog Server
-```sh
+
  Tạo password_secret và password cho admin
+ ```sh
  pwgen -N 1 -s 96
  echo -n yourpassword | shasum -a 256
  ```
