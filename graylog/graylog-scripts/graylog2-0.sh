@@ -94,6 +94,7 @@ sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/se
 sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
 sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300, 127.0.0.2:9500|elasticsearch_discovery_zen_ping_unicast_hosts = '127.0.0.1:9300'|' /etc/graylog/server/server.conf
 sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
+sed -i -e 's|#web_listen_uri = http://127.0.0.1:9000/|web_listen_uri = http://$IPADD:9000
 sudo start graylog-server
 echo -e "\033[33m ##### Configuring rsyslog ##### \033[0m"
 sleep 3 
