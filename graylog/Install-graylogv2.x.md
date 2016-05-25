@@ -16,6 +16,7 @@
 ####Cách cài đặt
 
  - Với Graylog Server
+ 
  ```sh
  wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog2-0.sh
  ```
@@ -37,5 +38,15 @@
 
  - Tạo các Input cơ bản để nhận dữ liệu từ Client và từ chính Graylog-server
  ![NOTE4](images/4.png)
+ ![NOTE5](images/5.png)
+ ![NOTE6](images/6.png)
  
-- Tham khảo cách sử dụng
+####Các tham khảo
+  - Sử dụng Web-Interface: 
+```sh
+https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md)
+```
+  - Cấu hình cho Graylog Collector:
+```sh
+https://github.com/hocchudong/ghichep-graylog/tree/master/graylog/graylog-collector
+```
