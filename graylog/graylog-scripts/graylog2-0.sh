@@ -14,7 +14,7 @@
 # Get IP Server
 IPADD="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 
-echo -e "\033[33m  ##### Script install Graylog V1.x (Script cai dat Graylog V1.x) ###### \033[0m"
+echo -e "\033[33m  ##### Script install Graylog V2.x (Script cai dat Graylog V2.x) ###### \033[0m"
 sleep 3
 echo -e "\033[32m  ##### Enter password for Graylog server (Nhap password cho Graylog) ##### \033[0m"
 read -r adminpass
