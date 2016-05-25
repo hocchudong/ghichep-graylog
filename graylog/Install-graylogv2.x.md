@@ -29,19 +29,19 @@
  
  - Nhập password cho admin khi đăng nhập vào Web-interface
  
- ![NOTE1](images/1.png)
+ ![NOTE1](images/i1.png)
 
  - Ấn phím *ENTER* để tiếp tục
  
- ![NOTE2](images/2.png)
+ ![NOTE2](images/i2.png)
 
  - Sau khi Reboot lại máy, khởi động Graylog và restart rsyslog
- ![NOTE3](images/3.png)
+ ![NOTE3](images/i3.png)
 
  - Tạo các Input cơ bản để nhận dữ liệu từ Client và từ chính Graylog-server
- ![NOTE4](images/4.png)
- ![NOTE5](images/5.png)
- ![NOTE6](images/6.png)
+ ![NOTE4](images/i4.png)
+ ![NOTE5](images/i5.png)
+ ![NOTE6](images/i6.png)
  
 ####Các tham khảo
   - Sử dụng Web-Interface: 
