@@ -36,7 +36,7 @@
  ![NOTE2](images/i2.png)
 
  - Sau khi Reboot lại máy, khởi động Graylog và restart rsyslog
- ![NOTE3](images/i3.png)
+ ![NOTE3](images/ii3.png)
 
  - Tạo các Input cơ bản để nhận dữ liệu từ Client và từ chính Graylog-server
  ![NOTE4](images/i4.png)
