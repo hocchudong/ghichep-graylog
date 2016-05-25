@@ -14,6 +14,7 @@
 ![Topo LAB](images/grayloglab.png)
 
 ####Cách cài đặt
+
  - Với Graylog Server
  ```sh
  wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog2-0.sh
