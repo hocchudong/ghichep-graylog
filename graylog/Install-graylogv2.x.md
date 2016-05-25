@@ -46,7 +46,7 @@
 ####Các tham khảo
   - Sử dụng Web-Interface: 
 ```sh
-https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md)
+https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md
 ```
   - Cấu hình cho Graylog Collector:
 ```sh
