@@ -28,9 +28,11 @@
  #####Một số *lưu ý* khi chạy script:
  
  - Nhập password cho admin khi đăng nhập vào Web-interface
+ 
  ![NOTE1](images/1.png)
 
  - Ấn phím *ENTER* để tiếp tục
+ 
  ![NOTE2](images/2.png)
 
  - Sau khi Reboot lại máy, khởi động Graylog và restart rsyslog
