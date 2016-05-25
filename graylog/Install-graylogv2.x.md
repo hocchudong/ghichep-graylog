@@ -42,6 +42,7 @@
  ![NOTE4](images/i4.png)
  ![NOTE5](images/i5.png)
  ![NOTE6](images/i6.png)
+ ![NOTE7](images/i7.png)
  
 ####Các tham khảo
  - [Sử dụng Web-Interface] (https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md)
