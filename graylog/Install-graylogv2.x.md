@@ -50,3 +50,7 @@ https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20
 ```sh
 https://github.com/hocchudong/ghichep-graylog/tree/master/graylog/graylog-collector
 ```
+ - Một số tính năng mới của Graylog 2.0
+```sh
+https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/Graylog%202.0%20-%20Nh%E1%BB%AFng%20t%C3%ADnh%20n%C4%83ng%20m%E1%BB%9Bi.md
+```
