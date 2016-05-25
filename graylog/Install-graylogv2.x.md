@@ -3,8 +3,8 @@
 ### INFO
 ```sh
 # Graylog V2.0.1
-# Elasticsearch 2.
-# MongoDB 
+# Elasticsearch 2.3.3
+# MongoDB 2.6.12
 # Ubuntu 14.04.2
 # Update: 25/5/2016
 ```
