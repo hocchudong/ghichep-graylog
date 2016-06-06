@@ -45,10 +45,10 @@
  ![NOTE6](images/i6.png)
  ![NOTE7](images/i7.png)
  
+* Lưu ý * : Với Graylog 2.0 ,  Graylog-Collector không còn được sử dụng.
 ####Các tham khảo
  - [Sử dụng Web-Interface] (https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md)
  
- - [Cấu hình cho Graylog Collector](https://github.com/hocchudong/ghichep-graylog/tree/master/graylog/graylog-collector)
  
  - [Một số tính năng mới của Graylog2.0](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/Graylog%202.0%20-%20Nh%E1%BB%AFng%20t%C3%ADnh%20n%C4%83ng%20m%E1%BB%9Bi.md)
 
