@@ -14,7 +14,8 @@
 ![Topo LAB](images/grayloglab.png)
 
 ####Cách cài đặt
-
+ - Cấu hình tối thiểu yêu : RAM 2GB, CPU = 2 Core.
+ 
  - Với Graylog Server
  
  ```sh
