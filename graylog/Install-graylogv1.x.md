@@ -35,7 +35,7 @@ Bước 3 : Hướng dẫn cấu hình Input trên WEB interface của Graylog
 Đăng nhập WEB interface
 ![graylog1](images/v1.3-1.png)
 
-Tham khảo link [sau](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-collector/GELF%20Input%20for%20graylog-collector.md)
+Tham khảo link [sau](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-collector/GELF%20Input%20for%20graylog-collector.md) để cài đặt INPUT
 
 Kiểm tra các source log
 ![graylog2](images/v1.3-2.png) 
