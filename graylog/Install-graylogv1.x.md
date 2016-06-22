@@ -1,4 +1,4 @@
-# Script install GRAYLOG V.1.3
+# Script cài đặt GRAYLOG V.1.3
 
 ### INFO
 ```sh
@@ -13,29 +13,30 @@
 *** 
 ![Topo LAB](images/grayloglab.png)
 
-#### How to execute
+3 bước cài đặt và cấu hình cho Graylog
+#### Chạy Script
 *** 
-- Graylog on Server 
+Bước 1: Cài Graylog Server 
 ```sh
-wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-server.sh
+wget https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-server.sh
 bash graylog-server.sh
 
 ```
 
-- Graylog for client 1 (Ubuntu)
+Bước 2 : Cài đặt Collector cho Client 
 ```sh
-wget https://raw.githubusercontent.com/hocchudong/log-script/master/graylog/graylog-client-ubuntu.sh
-bash graylog-client-ubuntu.sh
+wget https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-collector.sh
+bash graylog-collector.sh
 ```
+Sau khi chạy Script, nhập thông tin các file log cần lấy. Tham khảo bài Step 4 của bài [sau](https://github.com/hocchudong/ghichep-graylog/tree/master/graylog/graylog-collector)
 
-#### User Guide for Graylog WEB
-***
-![Step1](images/Screenshot_1.png)
+Bước 3 : Hướng dẫn cấu hình Input trên WEB interface của Graylog
 
-![Step1](images/Screenshot_2.png)
+Đăng nhập WEB interface
+[!Graylog1.3](/images/v1.3-1.png)
 
-![Step1](images/Screenshot_3.png)
+Tham khảo link [sau](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog/graylog-collector/GELF%20Input%20for%20graylog-collector.md)
 
-![Step1](images/Screenshot_4.png)
-
+Kiểm tra các source log
+[!Graylog1.3](/images/v1.3-2.png)
 
