@@ -9,30 +9,18 @@ auth-log {
     path = "/var/log/auth.log"
     }
 
-apache-acess {
+libvirt-log {
     type = "file"
-    path = "/var/log/apache2/access.log"
-  }
-
-apache-error {
-  type = "file"
-  path = "/var/log/apache2/error.log"
-}
-
-nova-api {
+    path = "/var/log/libvirt/libvirtd.log"
+    }
+nova-log {
     type = "file"
-    path = "/var/log/nova/nova-api.log"
-  }
-
-cinder-api-ctl {
-  type = "file"
-  path = "/var/log/cinder/cinder-api.log"
-}
-
-cinder-volume-ctl {
-  type = "file"
-  path = "/var/log/cinder/cinder-volume.log"
-}
+    path = "/var/log/nova/nova-compute.log"
+    }
+neutron-log {
+    type = "file"
+    path = "/var/log/neutron/neutron-linuxbridge-agent.log"
+    }
 
 }
 outputs {
