@@ -31,12 +31,6 @@ cinder-api-ctl {
   path = "/var/log/cinder/cinder-api.log"
 }
 
-cinder-scheduler-ctl {
-  type = "file"
-  path = "/var/log/cinder/cinder-scheduler.log"
-}
-
-
 cinder-volume-ctl {
   type = "file"
   path = "/var/log/cinder/cinder-volume.log"
