@@ -2,10 +2,14 @@
 
 
 
-server-url = "http://172.16.69.244:12900/"
+server-url = "http://172.16.69.150:12900/"
 collector-id = "file:/etc/graylog/collector/collector-id"
 inputs {
 
+auth-log {
+    type = "file"
+    path = "/var/log/auth.log"
+    }
 
 apache-acess {
     type = "file"
@@ -44,7 +48,7 @@ cinder-volume-ctl {
 outputs {
   graylog-server {
     type = "gelf"
-    host = "172.16.69.244"
+    host = "172.16.69.150"
     port = 12201
   }
 }
