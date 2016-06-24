@@ -1,7 +1,5 @@
 ### /etc/graylog/collector/collector.conf
 
-
-
 server-url = "http://172.16.69.150:12900/"
 collector-id = "file:/etc/graylog/collector/collector-id"
 inputs {
@@ -36,9 +34,7 @@ cinder-volume-ctl {
   path = "/var/log/cinder/cinder-volume.log"
 }
 
-
 }
-
 outputs {
   graylog-server {
     type = "gelf"
