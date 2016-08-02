@@ -18,7 +18,7 @@
 *** 
 Bước 1: Cài Graylog Server 
 ```sh
-wget https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-server.sh
+wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog-server.sh
 bash graylog-server.sh
 
 ```
