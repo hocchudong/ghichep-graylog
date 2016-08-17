@@ -56,9 +56,10 @@
 
 graylog conf: 
 <ul>
-rest_listen_uri = http://0.0.0.0:12900
-rest_transport_uri = http://public-ip:12900
-web_listen_uri = http://0.0.0.0:9000
+<li>rest_listen_uri = http://0.0.0.0:12900</li>
+<li>rest_transport_uri = http://public-ip:12900</li>
+<li>web_listen_uri = http://0.0.0.0:9000</li>
+
 elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300
 </ul>
 elasticsearch conf:
