@@ -14,7 +14,7 @@
 # Get IP Server
 IPADD="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 
-echo -e "\033[33m  ##### Script install Graylog V1.x (Script cai dat Graylog V1.x) ###### \033[0m"
+echo -e "\033[33m  ##### Script install Graylog V2.1 beta (Script cai dat Graylog V2.1 beta) ###### \033[0m"
 sleep 3
 echo -e "\033[32m  ##### Enter password for Graylog server (Nhap password cho Graylog) ##### \033[0m"
 read -r adminpass
@@ -24,7 +24,7 @@ echo -e "\033[33m ##### Update repos packages Elasticsearch, MongoDB, Graylog \0
 sleep 3
 # For Elasticsearch 2.x
 wget -qO - https://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
-$ echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch.list
+echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch.list
 
 # For MongoDB
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -89,7 +89,7 @@ echo -e "\033[33m ##### Install sussces MONGODB ##### \033[0m"
 sleep 3
 
 # Download Graylog2 tarballs
-echo -e "\033[33m  ##### Install Graylog V1.x Server & Graylog V1.x Web##### \033[0m"
+echo -e "\033[33m  ##### Install Graylog V2.1 beta##### \033[0m"
 sleep 3
 apt-get install graylog-server
 
