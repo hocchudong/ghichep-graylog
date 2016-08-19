@@ -33,7 +33,6 @@ apt-get -y install apt-transport-https
 wget https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.deb
 sudo dpkg -i graylog-2.1-repository_latest.deb
 
-
 # For Open-JDK
 sudo add-apt-repository -y ppa:webupd8team/java
 
@@ -57,7 +56,6 @@ cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bak
 sed -i -e 's|# cluster.name: my-application|cluster.name: graylog|' /etc/elasticsearch/elasticsearch.yml
 sed -i -e 's|# discovery.zen.ping.unicast.hosts: \["host1", "host2"\]|discovery.zen.ping.unicast.hosts: ['\"127.0.0.1\"']|' /etc/elasticsearch/elasticsearch.yml
 
-
 mv /etc/security/limits.conf /etc/security/limits.bak
 grep -Ev "# End of file" /etc/security/limits.bak > /etc/security/limits.conf
 echo "elasticsearch soft nofile 32000" >> /etc/security/limits.conf
@@ -68,7 +66,6 @@ echo "#### Restart elasticsearch ####"
 sleep 3
 service elasticsearch restart
 update-rc.d elasticsearch defaults
-
 
 # Install Mongodb
 echo -e "\033[33m ##### Install Mongodb ##### \033[0m"
