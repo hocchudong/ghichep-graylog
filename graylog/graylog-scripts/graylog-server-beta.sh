@@ -1,9 +1,9 @@
 #!/bin/bash
 #############################################################
-# Graylog V2.x
-# Ubuntu 14.04.1
-# Update: 24/5/2016
-# Author: ManhDV
+# Graylog V2.x BETA BETA 
+# Ubuntu 14.04.5
+# Update: 19/08/2016
+# Author: CongTO
 #############################################################
 # Run with root account  
 # wget 
@@ -14,10 +14,9 @@
 # Get IP Server
 IPADD="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 
-echo -e "\033[33m  ##### Script install Graylog V2.x (Script cai dat Graylog V2.x) ###### \033[0m"
+echo -e "\033[33m  ##### Script install Graylog V2.x BETA (Script cai dat Graylog V2.x BETA) ###### \033[0m"
 echo -e "\033[32m  ##### Enter password for Graylog server (Nhap password cho Graylog) ##### \033[0m"
 read -r adminpass
-
 echo -e "\033[33m ##### Update repos packages Elasticsearch, MongoDB, Graylog \033[0m"
 sleep 3
 
@@ -34,15 +33,15 @@ apt-get -y install apt-transport-https
 wget https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.deb
 sudo dpkg -i graylog-2.1-repository_latest.deb
 
+
+# For Open-JDK
+sudo add-apt-repository -y ppa:webupd8team/java
+
 # Update
 apt-get update
 
-#Install Open-JDK
-sudo add-apt-repository ppa:openjdk-r/ppa
-
-
-apt-get -y install git curl build-essential pwgen wget ssh ntp openjdk-8-jdk
-echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"  | tee -a /etc/environment
+apt-get -y install git curl build-essential pwgen wget ssh ntp oracle-java8-installer
+echo JAVA_HOME="/usr/lib/jvm/java-8-oracle"  | tee -a /etc/environment
 source /etc/environment
 
 ########################
@@ -56,7 +55,7 @@ sudo apt-get install elasticsearch
 
 cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bak
 sed -i -e 's|# cluster.name: my-application|cluster.name: graylog|' /etc/elasticsearch/elasticsearch.yml
-sed -i -e 's|# discovery.zen.ping.unicast.hosts: \["host1", "host2"\]|discovery.zen.ping.unicast.hosts: ['\"127.0.0.1:9300\"']|' /etc/elasticsearch/elasticsearch.yml
+sed -i -e 's|# discovery.zen.ping.unicast.hosts: \["host1", "host2"\]|discovery.zen.ping.unicast.hosts: ['\"127.0.0.1\"']|' /etc/elasticsearch/elasticsearch.yml
 
 
 mv /etc/security/limits.conf /etc/security/limits.bak
@@ -85,7 +84,7 @@ while ! nc -vz localhost 27017; do sleep 1; done
 echo -e "\033[33m ##### Install sussces MONGODB ##### \033[0m"
 sleep 3
 # Download Graylog 2.x
-echo -e "\033[33m  ##### Install Graylog V2.x Server##### \033[0m"
+echo -e "\033[33m  ##### Install Graylog V2.x BETA Server##### \033[0m"
 sleep 3
 sudo apt-get install graylog-server
 
@@ -95,11 +94,11 @@ sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/s
 admin_hash=$(echo -n $adminpass | shasum -a 256 | awk '{print $1}')
 sed -i -e "s|root_password_sha2 =|root_password_sha2 = $admin_hash|" /etc/graylog/server/server.conf
 sed -i 's|#root_timezone = UTC|root_timezone = Asia/Ho_Chi_Minh|' /etc/graylog/server/server.conf
-sed -i -e 's|rest_listen_uri = http://127.0.0.1:12900/|rest_listen_uri = http://0.0.0.0:12900/|' /etc/graylog/server/server.conf
+sed -i -e 's|rest_listen_uri = http://127.0.0.1:9000/api/|rest_listen_uri = http://0.0.0.0:12900/|' /etc/graylog/server/server.conf
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
-sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
-sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300, 127.0.0.2:9500|elasticsearch_discovery_zen_ping_unicast_hosts = '127.0.0.1:9300'|' /etc/graylog/server/server.conf
-sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
+# sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
+sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|elasticsearch_discovery_zen_ping_unicast_hosts = '127.0.0.1:9300'|' /etc/graylog/server/server.conf
+# sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
 sed -i -e 's|#web_listen_uri = http://127.0.0.1:9000/|web_listen_uri = http://0.0.0.0:9000|' /etc/graylog/server/server.conf
 sudo start graylog-server
 echo -e "\033[33m ##### Configuring rsyslog ##### \033[0m"
