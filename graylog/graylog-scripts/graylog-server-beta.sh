@@ -15,12 +15,12 @@
 IPADD="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 
 echo -e "\033[33m  ##### Script install Graylog V2.x (Script cai dat Graylog V2.x) ###### \033[0m"
-sleep 3
 echo -e "\033[32m  ##### Enter password for Graylog server (Nhap password cho Graylog) ##### \033[0m"
 read -r adminpass
-###############################
+
 echo -e "\033[33m ##### Update repos packages Elasticsearch, MongoDB, Graylog \033[0m"
 sleep 3
+
 # For Elasticsearch
 wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
@@ -31,20 +31,20 @@ echo 'deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen' |
 
 # For Graylog 2.x
 apt-get -y install apt-transport-https
-wget https://packages.graylog2.org/repo/packages/graylog-2.0-repository_latest.deb
-sudo dpkg -i graylog-2.0-repository_latest.deb
+wget https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.deb
+sudo dpkg -i graylog-2.1-repository_latest.deb
 
 # Update
 apt-get update
-apt-get -y install git curl build-essential pwgen wget ssh ntp
 
 #Install Open-JDK
 sudo add-apt-repository ppa:openjdk-r/ppa
-sudo apt-get update
-sudo apt-get install openjdk-8-jdk -y
 
+
+apt-get -y install git curl build-essential pwgen wget ssh ntp openjdk-8-jdk
 echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"  | tee -a /etc/environment
 source /etc/environment
+
 ########################
 # Install software basic
 apt-get -y install git curl build-essential pwgen wget ssh ntp
@@ -69,6 +69,8 @@ echo "#### Restart elasticsearch ####"
 sleep 3
 service elasticsearch restart
 update-rc.d elasticsearch defaults
+
+
 # Install Mongodb
 echo -e "\033[33m ##### Install Mongodb ##### \033[0m"
 sleep 3
