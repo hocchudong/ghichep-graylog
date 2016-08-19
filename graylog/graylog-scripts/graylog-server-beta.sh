@@ -31,8 +31,8 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 
 # For Graylog
-wget https://packages.graylog2.org/repo/packages/graylog-1.3-repository-ubuntu14.04_latest.deb
-dpkg -i graylog-1.3-repository-ubuntu14.04_latest.deb
+wget https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.deb
+dpkg -i graylog-2.1-repository_latest.deb
 apt-get install apt-transport-https
 
 # For Java
@@ -91,7 +91,7 @@ sleep 3
 # Download Graylog2 tarballs
 echo -e "\033[33m  ##### Install Graylog V1.x Server & Graylog V1.x Web##### \033[0m"
 sleep 3
-apt-get install graylog-server graylog-web
+apt-get install graylog-server
 
 echo "##### Config Graylog server #####"
 
