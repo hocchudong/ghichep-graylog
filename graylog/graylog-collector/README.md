@@ -63,7 +63,7 @@ Output hiển thị nên là đường dẫn tới thư mục java :
 
 ####Step 6 :Khởi động GraylogCollector
 	root@controller:~# service graylog-collector start
-Sau khi khởi động, vào web interface của graylog kiểm tra ( chú ý [cấu hình input cho graylog-webinterface](https://github.com/manhdinh/ghichep-graylog/blob/master/graylog-collector/GELF%20Input%20for%20graylog-collector.md) để nhận log từ trước đó )
+Sau khi khởi động, vào web interface của graylog kiểm tra ( chú ý [cấu hình input cho graylog-webinterface](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-collector/GELF%20Input%20for%20graylog-collector.md) để nhận log từ trước đó )
 #### Chú ý : 
 * 1. Sử dụng graylog-collector.sh để cài đặt, thì sau khi chạy file xong, vẫn phải vào file cấu hình collector.conf để cấu hình các file log muốn đẩy về.
 * 2. Với Ubuntu 12.04, khi cài đặt collector thì phải phân quyền thư mục đọc log với quyền 644 
