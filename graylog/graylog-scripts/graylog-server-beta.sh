@@ -34,15 +34,14 @@ wget https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.d
 sudo dpkg -i graylog-2.1-repository_latest.deb
 
 # For Open-JDK
-# sudo add-apt-repository -y ppa:webupd8team/java
-sudo add-apt-repository -y ppa:openjdk-r/ppa
-apt-get update -y 
-echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-apt-get -y install openjdk-8-jdk
-# echo JAVA_HOME="/usr/lib/jvm/java-8-oracle"  | tee -a /etc/environment
-# source /etc/environment
-# sudo update-alternatives --config javac
+sudo add-apt-repository -y ppa:webupd8team/java
 
+# Update
+apt-get update
+
+apt-get -y install git curl build-essential pwgen wget ssh ntp oracle-java8-installer
+echo JAVA_HOME="/usr/lib/jvm/java-8-oracle"  | tee -a /etc/environment
+source /etc/environment
 
 ########################
 # Install software basic
