@@ -25,7 +25,7 @@ bash graylog-server.sh
 
 Bước 2 : Cài đặt Collector cho Client 
 ```sh
-wget https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-scripts/graylog-collector.sh
+wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog-collector.sh
 bash graylog-collector.sh
 ```
 Sau khi chạy Script, nhập thông tin các file log cần lấy. Tham khảo bài Step 4 của bài [sau](https://github.com/hocchudong/ghichep-graylog/tree/master/graylog/graylog-collector)
