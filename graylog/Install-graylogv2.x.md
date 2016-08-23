@@ -52,3 +52,17 @@
  
  - [Một số tính năng mới của Graylog2.0](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/Graylog%202.0%20-%20Nh%E1%BB%AFng%20t%C3%ADnh%20n%C4%83ng%20m%E1%BB%9Bi.md)
 
+**Lưu ý** : Config web cho ip public :
+
+graylog conf: 
+<ul>
+<li>rest_listen_uri = http://0.0.0.0:12900</li>
+<li>rest_transport_uri = http://public-ip:12900</li>
+<li>web_listen_uri = http://0.0.0.0:9000</li>
+
+elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300
+</ul>
+elasticsearch conf:
+<ul>
+discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
+</ul>
