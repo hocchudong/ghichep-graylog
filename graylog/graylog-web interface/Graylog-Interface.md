@@ -149,7 +149,7 @@ Có rất nhiều dạng Input nhưng ở đây chúng ta sẽ chỉ đề cập
 
 #####6.1.1.	GELF TCP <a name="ge"> </a> 
 GELF TCP là input chuyên dùng cho Graylog collector, xem hướng dẫn về Graylog-Collector theo link sau :
-https://github.com/hocchudong/ghichep-graylog/tree/master/graylog-collector
+https://github.com/hocchudong/ghichep-graylog/tree/master/graylog/graylog-collector
 
 <img src="http://i.imgur.com/iTUv0aj.png">
 
