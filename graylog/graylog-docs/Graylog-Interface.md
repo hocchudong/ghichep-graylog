@@ -74,49 +74,55 @@ Giúp việc tìm kiếm thông tin được nhanh chóng và chính xác.
 Các bảng và biểu đồ này ta có thể thêm vào dashboard, giúp việc đọc dữ liệu dễ dàng hơn.
 
 ### 3. Stream <a name="st"> </a> 
-####3.1 Định nghĩa <a name="dn3"> </a> 
- Là kỹ thuật định tuyến bản tin tới một chỉ mục nhất định. Ví dụ, tôi chỉ muốn đọc các bản tin liên quan ssh thì sẽ dùng Stream để lọc các bản tin về ssh được đẩy về.
-####3.2 Công dụng <a name="cd2"> </a> 
 
- -	Phân luồng thông tin.
- 
+#### 3.1 Định nghĩa <a name="dn3"> </a> 
+
+- Là kỹ thuật định tuyến bản tin tới một chỉ mục nhất định. Ví dụ, tôi chỉ muốn đọc các bản tin liên quan ssh thì sẽ dùng Stream để lọc các bản tin về ssh được đẩy về.
+
+#### 3.2 Công dụng <a name="cd2"> </a> 
+
+ -	Phân luồng thông tin. 
  -	Có thể đẩy các bản tin trong Stream qua một output khác để xử lý.
- 
  -	Dùng cho việc cảnh báo ( qua Email, Slack)
-####3.3 Tạo và kiểm soát Stream <a name="tvk1"> </a> 
 
-Stream dùng những rule riêng để phân luồng và lấy về các bản tin cần thiết. 
+#### 3.3 Tạo và kiểm soát Stream <a name="tvk1"> </a> 
 
-Trong mục Stream, ta click vài Create Stream, sau đó điền Title và Description cho Stream.
+- Stream dùng những rule riêng để phân luồng và lấy về các bản tin cần thiết. 
+
+- Trong mục Stream, ta click vài Create Stream, sau đó điền Title và Description cho Stream.
+
 <img src ="http://i.imgur.com/xXIs7Nk.png">
-Click vào Edit Rule, sau đó thêm Rule mới cho Stream. 
 
-Ví dụ ở đây ta sẽ tạo rule để thu thập các bản tin chứa regex là : Failed password for .+ from .+
+- Click vào Edit Rule, sau đó thêm Rule mới cho Stream. 
+- Ví dụ ở đây ta sẽ tạo rule để thu thập các bản tin chứa regex là : `Failed password for .+ from .+`
 
 <img src="http://i.imgur.com/lk3wFrz.png">
 <img src="http://i.imgur.com/3kPHnOo.png">
 
-Stream SSH Fail sẽ bắt tất cả những bản tin chứa chuỗi :Failed password for… from …
+- Stream SSH Fail sẽ bắt tất cả những bản tin chứa chuỗi :Failed password for… from …
 
 <img src="http://i.imgur.com/nJ7TbJ7.png">
 
-####3.4 Cảnh báo với Stream <a name="cd"> </a> 
+#### 3.4 Cảnh báo với Stream <a name="cd"> </a> 
 
 ### 4. Dashboard <a name="db"> </a> 
-####4.1 Định nghĩa <a name="dn4"> </a> 
+#### 4.1 Định nghĩa <a name="dn4"> </a> 
 
- Là nơi để hiển thị biểu đồ, số liệu, bảng thống kê... được tạo trong mục Search 
+- Là nơi để hiển thị biểu đồ, số liệu, bảng thống kê... được tạo trong mục Search 
  
  <img src="http://i.imgur.com/tS2djC5.png">
  
 ####4.2 Công dụng <a name="cd3"> </a> 
-Giúp người dùng dễ dàng trong việc thống kê, tìm kiếm các thông tin được lọc từ bản tin log.
+
+- Giúp người dùng dễ dàng trong việc thống kê, tìm kiếm các thông tin được lọc từ bản tin log.
+
 ###4.3 Tạo và kiểm soát Dashboard <a name="tvk3"> </a> 
-Trên Dashboard, tạo một Dashboard mới, thêm Title và Description cho Dashboard
+
+- Trên Dashboard, tạo một Dashboard mới, thêm Title và Description cho Dashboard
 
 <img src="http://i.imgur.com/3OztHjw.png">
 
-Sau khi tạo xong, Dashboard hiện giờ vẫn đang rỗng, ta cần thêm thông số vào Dashboard thông qua Search hoặc Stream.
+- Sau khi tạo xong, Dashboard hiện giờ vẫn đang rỗng, ta cần thêm thông số vào Dashboard thông qua Search hoặc Stream.
 
 Ví dụ : Dashboard thống kê số lần đăng nhập SSH thành công, thất bại, và tổng số đăng nhập trong 30 phút
 <img src="http://i.imgur.com/edGkJIc.png">
@@ -134,22 +140,26 @@ Làm tương tự với 3.2. Ta có Dashboard sau
 <img src="http://i.imgur.com/lqtjzSw.png">
 
 ### 5. Source <a name="so"> </a> 
-####5.1 Định nghĩa <a name="dn5"> </a> 
 
-Sources thống kê số bản tin nhận về theo thời gian dưới dạng biểu đồ, và ip đang đẩy log về Graylog
+#### 5.1 Định nghĩa <a name="dn5"> </a> 
+
+- Sources thống kê số bản tin nhận về theo thời gian dưới dạng biểu đồ, và ip đang đẩy log về Graylog
 
 <img src="http://i.imgur.com/RtiGGSB.png">
+
 ### 6. System <a name="sy"> </a> 
 
-Trong phần này tôi sẽ giới thiệu 2 mục quan trọng đó là Input và kỹ thuật Regex để tạo ra các Extractor.
-####6.1 Input <a name="in"> </a> 
-#####Định nghĩa
-Input giống như một địa chỉ nhà, các bản tin từ máy client sẽ được cung cấp thông tin về địa chỉ đó để có thể đẩy được log về cho Graylog Server.
+- Trong phần này tôi sẽ giới thiệu 2 mục quan trọng đó là Input và kỹ thuật Regex để tạo ra các Extractor.
 
-Có rất nhiều dạng Input nhưng ở đây chúng ta sẽ chỉ đề cập đến 2 loại input là GELF TCP và Syslog để sử dụng với 2 kỹ thuật đẩy log là đẩy bằng Syslog thuần túy và đẩy bằng Graylog Collector.
+#### 6.1 Input <a name="in"> </a> 
+##### Định nghĩa
 
-#####6.1.1.	GELF TCP <a name="ge"> </a> 
-GELF TCP là input chuyên dùng cho Graylog collector, xem hướng dẫn về Graylog-Collector theo link sau :
+- Input giống như một địa chỉ nhà, các bản tin từ máy client sẽ được cung cấp thông tin về địa chỉ đó để có thể đẩy được log về cho Graylog Server.
+- Có rất nhiều dạng Input nhưng ở đây chúng ta sẽ chỉ đề cập đến 2 loại input là GELF TCP và Syslog để sử dụng với 2 kỹ thuật đẩy log là đẩy bằng Syslog thuần túy và đẩy bằng Graylog Collector.
+
+##### 6.1.1.	GELF TCP <a name="ge"> </a> 
+
+- GELF TCP là input chuyên dùng cho Graylog collector, xem hướng dẫn về Graylog-Collector theo link sau :
 https://github.com/hocchudong/ghichep-graylog/tree/master/graylog/graylog-collector
 
 <img src="http://i.imgur.com/iTUv0aj.png">
@@ -159,13 +169,11 @@ Sau khi launch input mới, ta nhập các thông tin cần thiết vào bảng
 <img src="http://i.imgur.com/1xxxatn.png">
 <img src="http://i.imgur.com/WvRdRou.png">
 
-Một số mục cần lưu ý khi nhập thông tin :
+- Một số mục cần lưu ý khi nhập thông tin :
 
-•	Bind IP : Nhập IP của Graylog-Server  hoặc 0.0.0.0 ( Nếu đặt 0.0.0.0 Graylog server sẽ lắng nghe tất cả các bản tin trả về, chỉ đặt nếu đã thiết lập IPTables)
-
-•	Port : Chú ý đặt trùng với port thiết lập trong file config của máy Collector Client ( mặc định của cả 2 là 12201 )
-
-•	Bạn có thể tìm hiểu thêm về cơ chế đẩy log với TLS để sử dụng TLS với Graylog-Colector để bảo mật tốt hơn khi truyền các bản tin log.
+    - Bind IP : Nhập IP của Graylog-Server  hoặc 0.0.0.0 ( Nếu đặt 0.0.0.0 Graylog server sẽ lắng nghe tất cả các bản tin trả về, chỉ đặt nếu đã thiết lập IPTables)
+    - Port : Chú ý đặt trùng với port thiết lập trong file config của máy Collector Client ( mặc định của cả 2 là 12201 )
+    - Bạn có thể tìm hiểu thêm về cơ chế đẩy log với TLS để sử dụng TLS với Graylog-Colector để bảo mật tốt hơn khi truyền các bản tin log.
 
 Sau khi launch xong input, cần có 2 phần của Input cần lưu ý
 
@@ -175,20 +183,21 @@ Sau khi launch xong input, cần có 2 phần của Input cần lưu ý
 
 2 : Quản lý các extractor được tạo ở phần searching. 
 
-####6.1.2.	Syslog UDP <a name="sys"> </a> 
+#### 6.1.2.	Syslog UDP <a name="sys"> </a> 
 
 Nhận những bản tin được đẩy bằng syslog thuần túy.
 
 Các thông số cũng giống với input GELF
 <img src="http://i.imgur.com/JAeFGgr.png">
 
-####6.2 Extractor <a name="ex"> </a> 
+#### 6.2 Extractor <a name="ex"> </a> 
 
 #####6.2.1 Định nghĩa <a name="dn5"> </a> 
-Là các trường được thêm vào để lọc lấy 1 số thông tin nhất đinh từ bản tin như : user, ip, port... 
 
-Extractor được tạo ra bằng cách sử dụng kỹ thuật Regular Expression 
-#####6.2.2 Tạo Extractor <a name="ta"> </a> 
+- Là các trường được thêm vào để lọc lấy 1 số thông tin nhất đinh từ bản tin như : user, ip, port... 
+- Extractor được tạo ra bằng cách sử dụng kỹ thuật Regular Expression 
+
+##### 6.2.2 Tạo Extractor <a name="ta"> </a> 
 
 Bước 1 : Chọn 1 bản tin mẫu và extractor tạo ra sẽ lọc những thông tin với những bản tin có cú pháp tương tự như bản tin mẫu : 
 <img src="http://i.imgur.com/p7b0vYw.png">
