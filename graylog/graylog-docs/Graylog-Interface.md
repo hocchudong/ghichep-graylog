@@ -29,11 +29,12 @@ http://IP-GraylogServer:9000
 <img src="http://i.imgur.com/N88Guvw.png">
 
 Trên dashboard của Web-Interface có 5 mục chính :
-•	Search 
-•	Stream
-•	Dashboard
-•	Sources
-•	System
+
+    - Search 
+    - Stream
+    - Dashboard
+    - Sources
+    - System
 
 <img src="http://i.imgur.com/buQz6VM.png">
 
