@@ -58,7 +58,7 @@
 
 - Giải sử máy chủ LOG có IP Private là `172.17.77.241/24`, được NAT qua IP Public `203.168.11.20`. Lúc này ta muốn truy cập từ bên ngoài vào web của Graylog thông qua địa chỉ `203.168.11.20`
 
-- File `/etc/graylog/server/server.conf` chứa các dòng sau:
+- Sửa file `/etc/graylog/server/server.conf`  để chứa các dòng sau:
     
     ```sh
     ....
@@ -73,7 +73,10 @@
 - File `/etc/elasticsearch/elasticsearch.yml` có nội dung như sau
     
     ```sh
-    root@cong-u14-ctl:/tmp# cat /etc/elasticsearch/elasticsearch.yml | egrep -v '^#|^$'
+    root@cong-u14-ctl:# cat /etc/elasticsearch/elasticsearch.yml | egrep -v '^#|^$'
+    ```
+    
+    ```sh
     cluster.name: graylog
     discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
     ```
