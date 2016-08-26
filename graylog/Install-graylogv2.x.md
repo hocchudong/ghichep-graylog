@@ -54,11 +54,12 @@
 
  
 ### Các lưu ý: 
-**Lưu ý** : Config web cho ip public đối với tình huống truy cập vào máy chủ LOG thông qua IP Public được NAT ra bên ngoài :
+1. Config Web-Interface đối với tình huống truy cập vào máy chủ LOG thông qua IP Public được NAT ra bên ngoài:
 
 Giải sử máy chủ LOG có IP Private là `172.17.77.241/24`, được NAT qua IP Public `203.168.11.20`. Lúc này ta muốn truy cập từ bên ngoài vào web của Graylog thông qua địa chỉ `203.168.11.20`
 
 - File `/etc/graylog/server/server.conf` chứa các dòng sau:
+    
     ```sh
     ....
     rest_listen_uri = http://0.0.0.0:12900/
@@ -67,8 +68,10 @@ Giải sử máy chủ LOG có IP Private là `172.17.77.241/24`, được NAT q
     web_listen_uri = http://0.0.0.0:9000/
     web_endpoint_uri = http://203.168.11.20:12900
     ....
- 
+    ```
+    
 - File `/etc/elasticsearch/elasticsearch.yml` có nội dung như sau
+    
     ```sh
     root@cong-u14-ctl:/tmp# cat /etc/elasticsearch/elasticsearch.yml | egrep -v '^#|^$'
     cluster.name: graylog
