@@ -58,16 +58,18 @@
 
 - Giải sử máy chủ LOG có IP Private là `172.17.77.241/24`, được NAT qua IP Public `203.168.11.20`. Lúc này ta muốn truy cập từ bên ngoài vào web của Graylog thông qua địa chỉ `203.168.11.20`
 
-- Sửa file `/etc/graylog/server/server.conf`  để chứa các dòng sau:
+- Sửa file `/etc/graylog/server/server.conf`  để chứa các dòng sau (một phần trong khai báo):
     
     ```sh
-    ....
+    ... các dòng khác
+    
     rest_listen_uri = http://0.0.0.0:12900/
     rest_transport_uri = http://172.17.77.241:12900/
     web_enable = true
     web_listen_uri = http://0.0.0.0:9000/
     web_endpoint_uri = http://203.168.11.20:12900
-    ....
+    
+    ... các dòng khác
     ```
     
 - File `/etc/elasticsearch/elasticsearch.yml` có nội dung như sau
