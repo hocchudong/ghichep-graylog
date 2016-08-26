@@ -56,7 +56,7 @@
 ### Các lưu ý: 
 1. Config Web-Interface đối với tình huống truy cập vào máy chủ LOG thông qua IP Public được NAT ra bên ngoài:
 
-Giải sử máy chủ LOG có IP Private là `172.17.77.241/24`, được NAT qua IP Public `203.168.11.20`. Lúc này ta muốn truy cập từ bên ngoài vào web của Graylog thông qua địa chỉ `203.168.11.20`
+- Giải sử máy chủ LOG có IP Private là `172.17.77.241/24`, được NAT qua IP Public `203.168.11.20`. Lúc này ta muốn truy cập từ bên ngoài vào web của Graylog thông qua địa chỉ `203.168.11.20`
 
 - File `/etc/graylog/server/server.conf` chứa các dòng sau:
     
