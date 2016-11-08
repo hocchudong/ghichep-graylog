@@ -9,7 +9,7 @@
 
 ![graylog](/images/small-architecture.png)
 
-Mô hình cài đặt áp dụng cho các hệ thống nhỏ, không bảo mật hoặc test.
+Mô hình cài đặt áp dụng cho các hệ thống nhỏ, không bảo mật hoặc mô hình test.
 
 ##III. Mô hình cài đặt Bigger-production setup
 
