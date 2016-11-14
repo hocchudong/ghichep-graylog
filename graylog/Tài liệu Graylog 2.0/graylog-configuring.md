@@ -182,9 +182,9 @@ backends:
 ```
 
 ###2.5 Khởi động Sidecar :
- - Debian/Ubuntu	sudo start collector-sidecar
- - RedHat/CentOS	sudo systemctl start collector-sidecar
- - Windows	C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service start
+ - Debian/Ubuntu : `sudo start collector-sidecar`
+ - RedHat/CentOS : `sudo systemctl start collector-sidecar`
+ - Windows		 : `C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service start`
  
 Khi Sidecar tìm thấy một cấu hình với tag phù hợp, nó sẽ ghi cho mỗi collector backend một file cấu hình 
 vào trong thư mục `/generated`. Ví dụ, nếu bạn bật Filebeat collector bạn sẽ tìm thấy một file `filebeat.yml` trong thư mục trong thư mục này.
