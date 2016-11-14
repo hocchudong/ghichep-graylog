@@ -93,15 +93,18 @@ Tải file và deactive nxlog trước khi cài đặt :
 C:\Program Files (x86)\nxlog\nxlog -u
 collector_sidecar_installer.exe
 ```
+
 Sửa file `C:\Program Files\graylog\collector-sidecar\collector_sidecar.yml` và register service hệ thống :
 ```sh
 C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service install
 C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service start
 ```
+
 Để uninstall trên Window :
 ```sh
 C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service stop
 C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service uninstall
+```
 
 ###2.4 Các tùy chọn cấu hình trong `collector_sidecar.yml`
 File cấu hình được chia thành global option và backend option. 
