@@ -2,6 +2,7 @@
 ###1. Cài đặt các package phụ trợ
 ```sh
 add-apt-repository ppa:openjdk-r/ppa
+apt-get update -y 
 apt-get install -y apt-transport-https openjdk-8-jre-headless uuid-runtime pwgen
 ```
 ###2. Cài đặt MongoDB
