@@ -44,6 +44,7 @@
  ![NOTE5](images/i5.png)
  ![NOTE6](images/i6.png)
  ![NOTE7](images/i7.png)
+
  
 *Lưu ý* : Với Graylog 2.0 ,  Graylog-Collector không còn được sử dụng.
 ####Các tham khảo
