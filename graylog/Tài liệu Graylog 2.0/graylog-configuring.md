@@ -16,6 +16,7 @@
 	*	[5. Sidecar status](#5)
 *	[III. Cài đặt phía server](#III)
 *	[IV. Một số thuật ngữ](#IV)
+
 #I. Giới thiệu 
 <a name="I"> </a> 
 
@@ -24,12 +25,13 @@
 
 ![graylog](/graylog/images/collector-sidecar.png)
 
-	Điểm khác biệt giữa Graylog phiên bản 2.0 trở lên với các phiên bản Graylog cũ (version <1.3) chính là Graylog 2.0 sử dụng phương thức hoạt động là Graylog Collector Sidecar.
+Điểm khác biệt giữa Graylog phiên bản 2.0 trở lên với các phiên bản Graylog cũ (version <1.3) chính là Graylog 2.0 sử dụng phương thức hoạt động là Graylog Collector Sidecar.
 
-	Với phương thức truyền thống trước kia (Graylog version <1.3), người quản trị sẽ tiến hành cài đặt một agent của graylog-server (graylog-collector) bên phía client, khai báo các thông số cấu hình (
+Với phương thức truyền thống trước kia (Graylog version <1.3), người quản trị sẽ tiến hành cài đặt một agent của graylog-server (graylog-collector) bên phía client, khai báo các thông số cấu hình (
 thông số server, thông số file log muốn thu thập...) trong file cấu hình ở phía client, sau đó khởi động agent. Tại phía Graylog-server, trên Web-interface sẽ tiến hành tạo một input để nhận các 
 thông số truyền đến từ phía client. Lúc này, Graylog-server chỉ đóng vai trò tiếp nhận và hiển thị, hoàn toàn không can thiệp trực tiếp đến client.
-	Với phương thức mới (Graylog version >2.0), người quản trị có thể sử dụng các backend thu thập log có sẵn ( hoặc tạo mới) trên phía client, đồng thời dùng một hệ thống quản lý cấu hình trọng lượng nhẹ (
+
+Với phương thức mới (Graylog version >2.0), người quản trị có thể sử dụng các backend thu thập log có sẵn ( hoặc tạo mới) trên phía client, đồng thời dùng một hệ thống quản lý cấu hình trọng lượng nhẹ (
 graylog-collector-sidecar) dùng để quản lý cấu hình của backend. Sau khi khai báo các thông số cần thiết cho collector-sidecar, file cấu hình của các backend
  sẽ được tự động sinh ra. Theo định kỳ, tiến trình Sidecar sẽ thu thập tất cả các cấu hình thích hợp cho target, dùng REST API. Những cấu hình được thu thập dựa vào các 
 "tag" trong file cấu hình. Ví dụ, một Web server host bao gồm các tag "linux" và tag "nginx"
@@ -40,7 +42,7 @@ Sau đó nó sẽ start hoặc restart, các log collector sẽ được reconfi
 ##2. Backends
 <a name="2"> </a> 
 
-	Hiện giờ Sidecar đang hỗ trợ NXlog, Filebeat và Winlogbeat. Tất cả chúng đều chia sẻ một giao diện web giống nhau. Các tính năng được hỗ trợ hầu hết
+Hiện giờ Sidecar đang hỗ trợ NXlog, Filebeat và Winlogbeat. Tất cả chúng đều chia sẻ một giao diện web giống nhau. Các tính năng được hỗ trợ hầu hết
 giống nhau. Tất cả các collector GELF output được hỗ trợ SSL. Ở phía server, bạn có thể chia sẻ các input với các nhiều collector. Vd, tất cả Filebeat
 và Winlogbeat instance có thể gửi log về một Graylog-Beat input.
 
@@ -58,7 +60,7 @@ dpkg -i collector-sidecar_0.1.0-1_amd64.deb
 Chỉnh sửa file `/etc/graylog/collector-sidecar/collector_sidecar.yml`, thêm URL của Graylog server và tag. Các tag sẽ được dùng để chỉ ra các cấu hình 
 host sẽ được nhận. 
 
-![graylog](/graylog/images/sidecar-config-01.png)
+![graylog](/graylog/images/sidecar-config.png)
 
 Tạo systemc service và start :
 ```sh
