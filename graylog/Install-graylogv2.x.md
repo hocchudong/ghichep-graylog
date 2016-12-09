@@ -21,7 +21,7 @@
  ```sh
  wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog2-0.sh
  ```
- - Với Client : Xem link [sau](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/T%C3%A0i%20li%E1%BB%87u%20Graylog%202.0/graylog-configuring.md)
+ - Với Client : Xem link [sau](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/ghichep-graylog2.0/graylog-configuring.md)
  
  #####Một số *lưu ý* khi chạy script:
  
