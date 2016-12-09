@@ -21,20 +21,13 @@
  ```sh
  wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog2-0.sh
  ```
- - Với Client
- ```sh
- wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog-collector.sh
- ```
- 
+ - Với Client : Thực hiện theo link sau.
+  
  #####Một số *lưu ý* khi chạy script:
  
  - Nhập password cho admin khi đăng nhập vào Web-interface
  
  ![NOTE1](images/i1.png)
-
- - Ấn phím *ENTER* để tiếp tục
- 
- ![NOTE2](images/i2.png)
 
  - Sau khi Reboot lại máy, khởi động Graylog và restart rsyslog
  ![NOTE3](images/ii3.png)
@@ -44,6 +37,7 @@
  ![NOTE5](images/i5.png)
  ![NOTE6](images/i6.png)
  ![NOTE7](images/i7.png)
+
  
 *Lưu ý* : Với Graylog 2.0 ,  Graylog-Collector không còn được sử dụng.
 ####Các tham khảo
