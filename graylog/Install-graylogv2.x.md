@@ -21,10 +21,7 @@
  ```sh
  wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog2-0.sh
  ```
- - Với Client
- ```sh
- wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog-collector.sh
- ```
+ - Với Client : Xem link [sau](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/T%C3%A0i%20li%E1%BB%87u%20Graylog%202.0/graylog-configuring.md)
  
  #####Một số *lưu ý* khi chạy script:
  
@@ -32,9 +29,6 @@
  
  ![NOTE1](images/i1.png)
 
- - Ấn phím *ENTER* để tiếp tục
- 
- ![NOTE2](images/i2.png)
 
  - Sau khi Reboot lại máy, khởi động Graylog và restart rsyslog
  ![NOTE3](images/ii3.png)
@@ -80,6 +74,5 @@
     
     ```sh
     cluster.name: graylog
-    discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
     ```
 
