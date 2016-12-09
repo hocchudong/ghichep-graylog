@@ -2,6 +2,7 @@
 ###1. Cài đặt các package phụ trợ
 ```sh
 add-apt-repository ppa:openjdk-r/ppa
+apt-get update -y
 apt-get install -y apt-transport-https openjdk-8-jre-headless uuid-runtime pwgen
 ```
 ###2. Cài đặt MongoDB
@@ -13,10 +14,10 @@ Graylog 2.0.0 yêu cầu Elasticsearch 2.x trở lên.
 ```sh
 wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
 echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
-apt-get update && sudo apt-get install elasticsearch
+apt-get update && apt-get -y install elasticsearch
 ```
 Chỉnh sửa file ``/etc/elasticsearch/elasticsearch.yml`` và sửa cluster name thành `graylog`
-
+sed -i 's/# cluster.name: my-application/cluster.name: graylog/g' /etc/elasticsearch/elasticsearch.yml
 Sau khi cài đặt xong :
 ```sh
 update-rc.d elasticsearch defaults
