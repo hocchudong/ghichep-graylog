@@ -21,20 +21,13 @@
  ```sh
  wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog2-0.sh
  ```
- - Với Client
- ```sh
- wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog-collector.sh
- ```
- 
+ - Với Client : Thực hiện theo link sau.
+  
  #####Một số *lưu ý* khi chạy script:
  
  - Nhập password cho admin khi đăng nhập vào Web-interface
  
  ![NOTE1](images/i1.png)
-
- - Ấn phím *ENTER* để tiếp tục
- 
- ![NOTE2](images/i2.png)
 
  - Sau khi Reboot lại máy, khởi động Graylog và restart rsyslog
  ![NOTE3](images/ii3.png)
@@ -61,9 +54,3 @@ graylog conf:
 <li>rest_transport_uri = http://public-ip:12900</li>
 <li>web_listen_uri = http://0.0.0.0:9000</li>
 
-elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300
-</ul>
-elasticsearch conf:
-<ul>
-discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
-</ul>
