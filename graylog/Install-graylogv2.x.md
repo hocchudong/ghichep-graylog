@@ -33,14 +33,12 @@
  - Sau khi Reboot lại máy, khởi động Graylog và restart rsyslog
  ![NOTE3](images/ii3.png)
 
- - Tạo các Input cơ bản để nhận dữ liệu từ Client và từ chính Graylog-server
- ![NOTE4](images/i4.png)
- ![NOTE5](images/i5.png)
- ![NOTE6](images/i6.png)
- ![NOTE7](images/i7.png)
  
 *Lưu ý* : Với Graylog 2.0 ,  Graylog-Collector không còn được sử dụng.
 ####Các tham khảo
+
+- [Cài đặt Graylog client](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/ghichep-graylog2.0/graylog-configuring.md)
+
  - [Sử dụng Web-Interface] (https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md)
  
  
