@@ -37,11 +37,10 @@
 *Lưu ý* : Với Graylog 2.0 ,  Graylog-Collector không còn được sử dụng.
 ####Các tham khảo
 
-- [Cài đặt Graylog client](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/ghichep-graylog2.0/graylog-configuring.md)
+ - [Cài đặt Graylog client](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/ghichep-graylog2.0/graylog-configuring.md)
 
  - [Sử dụng Web-Interface] (https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md)
- 
- 
+
  - [Một số tính năng mới của Graylog2.0](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/Graylog%202.0%20-%20Nh%E1%BB%AFng%20t%C3%ADnh%20n%C4%83ng%20m%E1%BB%9Bi.md)
 
  
