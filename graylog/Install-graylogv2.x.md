@@ -21,7 +21,10 @@
  ```sh
  wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog2-0.sh
  ```
- - Với Client : Xem link [sau](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/ghichep-graylog2.0/graylog-configuring.md)
+ - Với Client
+ ```sh
+ wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/graylog/graylog-scripts/graylog-collector.sh
+ ```
  
  #####Một số *lưu ý* khi chạy script:
  
@@ -29,18 +32,24 @@
  
  ![NOTE1](images/i1.png)
 
+ - Ấn phím *ENTER* để tiếp tục
+ 
+ ![NOTE2](images/i2.png)
 
  - Sau khi Reboot lại máy, khởi động Graylog và restart rsyslog
  ![NOTE3](images/ii3.png)
 
+ - Tạo các Input cơ bản để nhận dữ liệu từ Client và từ chính Graylog-server
+ ![NOTE4](images/i4.png)
+ ![NOTE5](images/i5.png)
+ ![NOTE6](images/i6.png)
+ ![NOTE7](images/i7.png)
  
 *Lưu ý* : Với Graylog 2.0 ,  Graylog-Collector không còn được sử dụng.
 ####Các tham khảo
-
- - [Cài đặt Graylog client](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/ghichep-graylog2.0/graylog-configuring.md)
-
  - [Sử dụng Web-Interface] (https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/graylog-web%20interface/Graylog-Interface.md)
-
+ 
+ 
  - [Một số tính năng mới của Graylog2.0](https://github.com/hocchudong/ghichep-graylog/blob/master/graylog/Graylog%202.0%20-%20Nh%E1%BB%AFng%20t%C3%ADnh%20n%C4%83ng%20m%E1%BB%9Bi.md)
 
  
@@ -71,5 +80,6 @@
     
     ```sh
     cluster.name: graylog
+    discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
     ```
 
