@@ -22,7 +22,7 @@ và Winlogbeat instance có thể gửi log về một Graylog-Beat input.
 ### 1.1 Ubuntu
 Dowload và cài đặt trong gói collector-sidecar
 ```sh
-wget https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0-alpha.2/collector-sidecar_0.1.0-1_amd64.deb
+wget https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0/collector-sidecar_0.1.0-1_amd64.deb
 dpkg -i collector-sidecar_0.1.0-1_amd64.deb
 ```
 Chỉnh sửa file `/etc/graylog/collector-sidecar/collector_sidecar.yml`, thêm URL của Graylog server và tag. Các ag sẽ được dùng để chỉ ra các cấu hình 
