@@ -37,7 +37,7 @@ start collector-sidecar
 Cài đặt từ rpm
 ```sh
 wget https://github.com/Graylog2/collector-sidecar/releases/download/0.1.1/collector-sidecar-0.1.1-1.x86_64.rpm
-rpm -i collector-sidecar-0.1.0-1.x86_64.rpm
+rpm -i collector-sidecar-0.1.1-1.x86_64.rpm
 ```
 Tạo systemc service và start :
 ```sh
