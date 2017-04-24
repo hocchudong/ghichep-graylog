@@ -1,4 +1,4 @@
-#I. Graylog Collector Sidecar
+# I. Graylog Collector Sidecar
 Graylog Collector Sidecar là một hệ thống quản lý cấu hình cho các log collector khác nhau, được gọi là các **Backend*. Graylog node hoạt động như một
 hub tập trung chứa các cấu hình của các log collector
 
@@ -12,17 +12,17 @@ Trong lần đầu tiên chạy, hoặc khi có một sự thay đổi về cấ
 Sau đó nó sẽ start hoặc restart, các log collector sẽ được reconfigured.
 Graylog Collector Sidecar (được viết bằng Go) và các backend (được viết bằng các ngôn ngữ khác nhau, C hoặc Go)
 
-#II. Backends
+# II. Backends
 Hiện giờ Sidecar đang hỗ trợ NXlog, Filebeat và Winlogbeat. Tất cả chúng đều chia sẻ một giao diện web giống nhau. Các tính năng được hỗ trợ hầu hết
 giống nhau. Tất cả các collector GELF output được hỗ trợ SSL. Ở phía server, bạn có thể chia sẻ các input với các nhiều collector. Vd, tất cả Filebeat
 và Winlogbeat instance có thể gửi log về một Graylog-Beat input.
 
-#III. Cài đặt
-##1. Beat Backend
-###1.1 Ubuntu
+# III. Cài đặt
+## 1. Beat Backend
+### 1.1 Ubuntu
 Dowload và cài đặt trong gói collector-sidecar
 ```sh
-wget https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0-alpha.2/collector-sidecar_0.1.0-1_amd64.deb
+wget https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0/collector-sidecar_0.1.0-1_amd64.deb
 dpkg -i collector-sidecar_0.1.0-1_amd64.deb
 ```
 Chỉnh sửa file `/etc/graylog/collector-sidecar/collector_sidecar.yml`, thêm URL của Graylog server và tag. Các ag sẽ được dùng để chỉ ra các cấu hình 
@@ -33,11 +33,11 @@ graylog-collector-sidecar -service install
 start collector-sidecar
 ```
 
-###1.2 Centos
+### 1.2 Centos
 Cài đặt từ rpm
 ```sh
-wget https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0-alpha.2/collector-sidecar-0.1.0-1.x86_64.rpm
-rpm -i collector-sidecar-0.1.0-1.x86_64.rpm
+wget https://github.com/Graylog2/collector-sidecar/releases/download/0.1.1/collector-sidecar-0.1.1-1.x86_64.rpm
+rpm -i collector-sidecar-0.1.1-1.x86_64.rpm
 ```
 Tạo systemc service và start :
 ```sh
@@ -45,7 +45,7 @@ graylog-collector-sidecar -service install
 systemctl start collector-sidecar
 ```
 
-###1.3 Window
+### 1.3 Window
 Tải và chạy file : `collector_sidecar_installer.exe`
 
 Sửa file `C:\Program Files\graylog\collector-sidecar\collector_sidecar.yml` và register service hệ thống :
@@ -54,8 +54,8 @@ C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -servic
 C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service start
 ```
 
-##2. NXlog backend
-###2.1 Ubuntu
+## 2. NXlog backend
+### 2.1 Ubuntu
 Cài đặt NXLog package từ trang dowload : http://nxlog.co/products/nxlog-community-edition/download . Cần stop tất cả các instance đã cài đặt NXlog
 và cấu hình lại. Sau đó có thể cài đặt Sidecar 
 ```sh
@@ -72,7 +72,7 @@ graylog-collector-sidecar -service install
 start collector-sidecar
 ```
 
-###2.2 Centos 
+### 2.2 Centos 
 ```sh
 /etc/init.d/nxlog stop
 update-rc.d -f nxlog remove
@@ -87,7 +87,7 @@ graylog-collector-sidecar -service install
 systemctl start collector-sidecar
 ```
 
-###2.3 Window
+### 2.3 Window
 Tải file và deactive nxlog trước khi cài đặt :
 ```sh
 C:\Program Files (x86)\nxlog\nxlog -u
@@ -106,7 +106,7 @@ C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -servic
 C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service uninstall
 ```
 
-###2.4 Các tùy chọn cấu hình trong `collector_sidecar.yml`
+### 2.4 Các tùy chọn cấu hình trong `collector_sidecar.yml`
 File cấu hình được chia thành global option và backend option. 
 Các global option :
  - server_url : URL của Graylog API , vd : `http://127.0.0.1:9000/api/`
@@ -181,7 +181,7 @@ backends:
 
 ```
 
-###2.5 Khởi động Sidecar :
+### 2.5 Khởi động Sidecar :
  - Debian/Ubuntu : `sudo start collector-sidecar`
  - RedHat/CentOS : `sudo systemctl start collector-sidecar`
  - Windows		 : `C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service start`
@@ -191,13 +191,13 @@ vào trong thư mục `/generated`. Ví dụ, nếu bạn bật Filebeat collect
 Tất cả các thay đổi được tạo trên Graylog Web interface. Mỗi lần Sidecar tìm thấy một update cấu hình thì nó sẽ rewrite trong gile cấu hình collector tương ứng.
 Sidecar sẽ đảm nhiệm việc giám sát các tiến trình collector mỗi khi có thay đổi và report trạng thái trở lại cho web interface.
 
-##3. Sidecar Status
+## 3. Sidecar Status
 Mỗi Sidecar instance có thể gửi lại thông tin tình trạng cho Graylog. Bằng việc mở option `send_status`, các metric như là các tag được cấu hình hoặc địa chỉ IP
 của host Sidecar đang chạy trên đó sẽ được gửi. Với `list-log-files` option thì thư mục listing sẽ được hiển thị trên Graylog web interface, nhờ đó admin có teher nhìn thấy file nào đang sẵn 
 sàng để thu thập. List này sẽ được update theo đình kỳ và các file với quyền ghi sẽ được highlight để dễ nhận biết. Sau khi enable `send_status` hoặc `send_status+list_log_files`, đi tới mục collector overview và click 
 vào một trong chúng, một trang trạng thái với các thông tin cấu hình sẽ được hiển thị.
 
-###3.1 Cài đặt Sidecar Step-by-step
+### 3.1 Cài đặt Sidecar Step-by-step
 **Backend là FileBeat**
 
 **Step 1**
@@ -246,7 +246,7 @@ Khi bạn start Sidecar với tag `apache` sẽ có output :
 
 ![graylog](/graylog/images/step7.png)
 
-##4. Bảo mật giao tiếp Sidecar
+## 4. Bảo mật giao tiếp Sidecar
 
 Giao tiếp giữa Sidecar và Graylog có thể được bảo mật nếu API của sử dụng SSL.
 
@@ -256,11 +256,11 @@ Sau khi save, giao tiếp giữa Beats và Graylog sẽ dùng TLS.
 
 Nếu nạn muốn NXlog bạn cần bật `Allow unstrusted certificate` trong NXLog Output configuration và `Enable TLS` cho GELF input.
 
-###4.1 Certificate dựa vào xác thực client
+### 4.1 Certificate dựa vào xác thực client
 Nếu bạn muốn cho phép Graylog chỉ chấp nhận các data từ các client đã được cấp certificate bạn bận xây dựng xác thực certificate và cung cấp nó cho
 Input và Client Output configuration
 
-##5. Một số thuật ngữ
+## 5. Một số thuật ngữ
 
 **Configuration** : chỉ `collector configuration file`. Nó chứa một trong nhiều Outputs, Inputs và Snippets. Dựa vào backend được lựa chọn Sidecar sẽ 
 tạo một file cấu hình làm việc cho collector cụ thể. Để match một cấu hình cho Sidecar instance, cả 2 phía cần được khởi động với tag giống nhau. Nếu 

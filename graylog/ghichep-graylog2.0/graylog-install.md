@@ -1,15 +1,15 @@
-##I. Cài đặt trên Ubuntu
-###1. Cài đặt các package phụ trợ
+## I. Cài đặt trên Ubuntu
+### 1. Cài đặt các package phụ trợ
 ```sh
 add-apt-repository ppa:openjdk-r/ppa
 apt-get update -y 
 apt-get install -y apt-transport-https openjdk-8-jre-headless uuid-runtime pwgen
 ```
-###2. Cài đặt MongoDB
+### 2. Cài đặt MongoDB
 ```sh
 apt-get install -y mongodb-server
 ```
-###3. Cài đặt Elasticsearch
+### 3. Cài đặt Elasticsearch
 Graylog 2.0.0 yêu cầu Elasticsearch 2.x trở lên.
 ```sh
 wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | apt-key add -
@@ -24,7 +24,7 @@ update-rc.d elasticsearch defaults
 service elasticsearch restart
 
 ```
-###4. Cài đặt Graylog
+### 4. Cài đặt Graylog
 ```sh
 wget https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.deb
 dpkg -i graylog-2.1-repository_latest.deb
@@ -42,13 +42,13 @@ rm -f /etc/init/graylog-server.override
 start graylog-server
 ```
 
-##II. Cài đặt trên Centos 7
-###1. Cài đặt các gói phụ trợ
+## II. Cài đặt trên Centos 7
+### 1. Cài đặt các gói phụ trợ
 ```sh
 yum install epel-release -y 
 yum install pwgen java-1.8.0-openjdk-headless.x86_64 -y
 ```
-###2. Cài đặt MongoDB
+### 2. Cài đặt MongoDB
 Tạo repo cho MongoDB : 
 ```sh
 vi /etc/yum.repos.d/mongodb-org-3.2.repo
@@ -73,7 +73,7 @@ systemctl daemon-reload
 systemctl enable mongod.service
 systemctl start mongod.service
 ```
-###3. Cài đặt Elasticsearch
+### 3. Cài đặt Elasticsearch
 Cài đặt Elasticsearch GPG key : 
 ```sh
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
@@ -100,7 +100,7 @@ systemctl daemon-reload
 systemctl enable elasticsearch.service
 systemctl restart elasticsearch.service
 ```
-###4. Cài đặt Graylog
+### 4. Cài đặt Graylog
 Cài đặt từ file rpm
 ```
 rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.rpm
@@ -119,7 +119,7 @@ systemctl daemon-reload
 systemctl enable graylog-server.service
 systemctl start graylog-server.service
 ```
-###5. Chỉnh sửa Selinux
+### 5. Chỉnh sửa Selinux
 Cho phép Web truy cập network :
 ```sh
  setsebool -P httpd_can_network_connect 1

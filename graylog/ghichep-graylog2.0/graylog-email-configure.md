@@ -1,6 +1,6 @@
-##Hướng dẫn cấu hình gửi email cảnh báo Graylog
+## Hướng dẫn cấu hình gửi email cảnh báo Graylog
 
-###1. Cấu hình Postfix email 
+### 1. Cấu hình Postfix email 
 Cài đặt mail postfix :
 
 ```sh
