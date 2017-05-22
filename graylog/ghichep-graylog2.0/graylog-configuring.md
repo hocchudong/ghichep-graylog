@@ -49,9 +49,39 @@ systemctl start collector-sidecar
 Tải và chạy file : `collector_sidecar_installer.exe`
 
 Sửa file `C:\Program Files\graylog\collector-sidecar\collector_sidecar.yml` và register service hệ thống :
+
 ```sh
-C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service install
-C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe -service start
+server_url: http://172.17.40.37:9000/api 
+update_interval: 10
+tls_skip_verify: false
+send_status: true
+list_log_files:
+node_id: app-ser-thanhtr-172.16.32.38
+collector_id: file:C:\Program Files\graylog\collector-sidecar\collector-id
+cache_path: C:\Program Files\graylog\collector-sidecar\cache
+log_path: C:\Program Files\graylog\collector-sidecar\logs
+log_rotation_time: 86400
+log_max_age: 604800
+tags: [windows]
+backends:
+    - name: nxlog
+      enabled: false
+      binary_path: C:\Program Files (x86)\nxlog\nxlog.exe
+      configuration_path: C:\Program Files\graylog\collector-sidecar\generated\nxlog.conf
+    - name: winlogbeat
+      enabled: true
+      binary_path: C:\Program Files\graylog\collector-sidecar\winlogbeat.exe
+      configuration_path: C:\Program Files\graylog\collector-sidecar\generated\winlogbeat.yml
+    - name: filebeat
+      enabled: false
+      binary_path: C:\Program Files\graylog\collector-sidecar\filebeat.exe
+      configuration_path: C:\Program Files\graylog\collector-sidecar\generated\filebeat.yml
+```
+ - Khởi động dịch vụ
+ 
+```sh
+"C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe" -service install
+"C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe" -service start
 ```
 
 ## 2. NXlog backend

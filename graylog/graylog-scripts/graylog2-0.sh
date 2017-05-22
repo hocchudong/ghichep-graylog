@@ -42,7 +42,7 @@ update-rc.d elasticsearch defaults
 service elasticsearch restart
 # For MongoDB
 apt-get install -y mongodb-server
-service mongodb start
+service mongodb restart
 # Test connection
 while ! nc -vz localhost 27017; do sleep 1; done
 echo -e "\033[33m ##### Install sussces MONGODB ##### \033[0m"
@@ -50,8 +50,8 @@ sleep 3
 
 # For Graylog 2.x
 echo -e "\033[33m  ##### Install Graylog V2.x Server##### \033[0m"
-wget https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.deb
-dpkg -i graylog-2.1-repository_latest.deb
+wget http://packages.graylog2.org/repo/packages/graylog-2.2-repository_latest.deb
+dpkg -i graylog-2.2-repository_latest.deb
 apt-get update && apt-get -y install graylog-server
 sleep 3
 
@@ -65,9 +65,9 @@ sed -i "s|rest_listen_uri = http:\/\/127.0.0.1:9000\/api\/|rest_listen_uri = htt
 sed -i "s|#web_listen_uri = http:\/\/127.0.0.1:9000\/|web_listen_uri = http:\/\/$IPADD:9000|" /etc/graylog/server/server.conf
 sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
 sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
-sed -i -e "s|#web_listen_uri = http://127.0.0.1:9000/|web_listen_uri = http://$IPADD:9000|" /etc/graylog/server/server.conf
 rm -f /etc/init/graylog-server.override
-start graylog-server
+update-rc.d graylog-server defaults
+service graylog-server start
 
 #################
 echo -e "\033[32m Setup Complete!"
