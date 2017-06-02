@@ -7,20 +7,22 @@
 ![graylog](/images/graylog-install01.png)
 
 Setup Graylog server :
-	- OS : Ubuntu 14.04 x 64 bit
-	- IP : 172.16.69.60
+
+ - OS : Ubuntu 14.04 x 64 bit
+ - IP : 172.16.69.60
 	
 Thông số phần cứng : 
-	- RAM : 4GB
-	- HDD : 100GB
-	- CPU : 4 Core
+
+ - RAM : 4GB
+ - HDD : 100GB
+ - CPU : 4 Core
 	
 ### 2. Phiên bản các thành phần
 
-	- Graylog : version 2.2 
-	- Elasticsearch : > 2.x
-	- MongoDB : > 2.4
-	- Java : > OpenJDK 8
+ - Graylog : version 2.2 
+ - Elasticsearch : > 2.x
+ - MongoDB : > 2.4
+ - Java : > OpenJDK 8
 	
 ## II. Cài đặt 
 
@@ -32,6 +34,7 @@ Thông số phần cứng :
 wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/scripts/graylog2-0.sh
 bash graylog2-0.sh
 ```
+**Chú ý** Khi được hỏi hãy nhập 2 thông số `IPADD` bằng IP của máy Graylog và `adminpass` với password đăng nhập Graylog Web muốn đặt.
 
  - Đăng nhập Graylog-Web với địa chỉ : `http://IP:9000`
  
@@ -42,48 +45,48 @@ bash graylog2-0.sh
 **Step 1**
 Tạo **Beat input** để collector có thể gửi data đến. Click vào `System -> Input` và khởi động một global Beat input với địa chỉ là 0.0.0.0 và port 5044.
 
-![graylog](/graylog/images/step1.png)
+![graylog](/images/step1.png)
 
 **Step 2**
 
 Chuyển qua cấu hình collector. Trên Graylog Webinterface click vào : System -> Collectors -> Manage configurations
 
-![graylog](/graylog/images/step2.png)
+![graylog](/images/step2.png)
 
 **Step 3**
 
 Tạo một cấu hình mới
 
-![graylog](/graylog/images/step3-1.png)
+![graylog](/images/step3-1.png)
 
 **Step 4**
 
 Thêm tên cho cấu hình
 
-![graylog](/graylog/images/step3-2.png)
+![graylog](/images/step3-2.png)
 
 **Step 5**
 
 Click vào cấu hình mới và tạo Filebeat output.
 
-![graylog](/graylog/images/step4.png)
+![graylog](/images/step4.png)
 
 **Step 6**
 
 Tạo Filebeat file input để thu thập Apache log
 
-![graylog](/graylog/images/step5.png)
+![graylog](/images/step5.png)
 
 **Step 7**
 
 Tag file cấu hình với tag là `apache`, sau đó ấn nút `Update tags`
 
-![graylog](/graylog/images/step6.png)
+![graylog](/images/step6.png)
 
 **Step 8**
 Khi bạn start Sidecar với tag `apache` sẽ có output :
 
-![graylog](/graylog/images/step7.png)
+![graylog](/images/step7.png)
 	
 ### 2. Cài đặt trên Client	
 
@@ -117,7 +120,8 @@ bash graylog-client-centos6.sh
 ```sh
 wget https://raw.githubusercontent.com/hocchudong/ghichep-graylog/master/scripts/graylog-client-centos7.sh
 bash graylog-client-centos7.sh
-	
+```
+
 Sau khi cài xong trên client, truy cập vào giao diện Dashboard để kiểm tra. Kết quả như ảnh sau là việc cài đặt trên Client đã thành công.
 
 ![graylog](/images/graylog-install03.png)
