@@ -92,7 +92,7 @@ Khi bạn start Sidecar với tag `apache` sẽ có output :
 
 Trên client, chỉ cần tải script về và chạy. 
 
-**Chú ý** : Chỉnh sửa thông số thông số **tag** cho đúng với cấu hình tại Step 7.
+**Chú ý** : Chỉnh sửa thông số thông số **tag** trong file cấu hình `/etc/graylog/collector-sidecar/collector_sidecar.yml` cho đúng với cấu hình tại Step 7.
 
  - Với Client là Ubuntu 14.04
  
