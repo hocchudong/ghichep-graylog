@@ -1,0 +1,1 @@
+# Thư mục chứa tài liệu Graylog version 2.x

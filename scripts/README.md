@@ -1,0 +1,1 @@
+# Thư mục chứa các script cài đặt
