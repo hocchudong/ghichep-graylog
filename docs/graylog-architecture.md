@@ -7,12 +7,12 @@
 
 ## II. Mô hình cài đặt minimum-setup 
 
-![graylog](/graylog/images/small-architecture.png)
+![graylog](/images/small-architecture.png)
 
 Mô hình cài đặt áp dụng cho các hệ thống nhỏ, không bảo mật hoặc mô hình test.
 
 ## III. Mô hình cài đặt Bigger-production setup
 
-![graylog](/graylog/images/bigger-architecture.png)
+![graylog](/images/bigger-architecture.png)
 
 Load balancer có thể ping đến các node Graylog thông qua HTTP trên Graylog REST API để kiểm tra tình trạng các node
