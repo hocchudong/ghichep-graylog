@@ -126,25 +126,25 @@ restart graylog-server
 
 Cấu hình trên Graylog Web-interface :
 
-![email](/graylog/images/email-00.png)
+![email](/imagesemail-00.png)
 
 Các mục cần cấu hình cảnh báo :
 
-![email](/graylog/images/email-01.png)
+![email](/imagesemail-01.png)
 
 **1** : Tạo điều kiện cho cảnh báo, ví dụ muốn tạo 1 cảnh báo là khi Stream nhận nhiều hơn 10 bản tin về ssh fail trong vòng 5 phút cuối và đợi ít nhất 5 phút 
 cho đến khi gửi một cảnh báo mới. Khi gửi cảnh báo thì chứa 2 bản tin cuối cùng của stream.
 
-![email](/graylog/images/email-02.png)
+![email](/imagesemail-02.png)
 
 **2** : Chọn loại Alert Callback và Add 
 
-![email](/graylog/images/email-03.png)
+![email](/imagesemail-03.png)
 
 **3** : Nhập User hoặc địa chỉ email mà bạn muốn cảnh báo được gửi đến.
 
-![email](/graylog/images/email-04.png)
+![email](/imagesemail-04.png)
 
 Khi Graylog nhận được trigger, email cảnh báo sẽ được gửi :
 
-![email](/graylog/images/email-05.png)
+![email](/imagesemail-05.png)
