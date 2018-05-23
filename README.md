@@ -1,14 +1,13 @@
-## Các ghi chép về graylog
+## Thư mục chứa tài liệu Graylog version 2.x
 
 ### Lịch sử tài liệu
 
-- 23.05.2018: Cập nhật lại mục lục tài liệu và bổ sung tài liệu cho Graylog 2.4.x
+### Mục lục
 
-## Mục lục 
+- [Giới thiệu về graylog](./docs/01.gioithieu_graylog.md)
 
-  
+- [Cài đặt graylog](./docs/02.caidat_graylog.md)
 
-### Người tham gia đóng góp
 
-- Đinh Văn Mạnh 
-- Tô Thành Công
+### Người đóng góp
+
