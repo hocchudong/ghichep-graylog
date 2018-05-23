@@ -4,11 +4,6 @@
 
 - 23.05.2018: Cập nhật lại mục lục tài liệu và bổ sung tài liệu cho Graylog 2.4.x
 
-### Người tham gia đóng góp
-
-- Đinh Văn Mạnh 
-- Tô Thành Công
-
 ## Mục lục 
  -  [1.File-Template ](https://github.com/hocchudong/ghichep-graylog/tree/master/file-template)
   
@@ -27,3 +22,7 @@
  -  [3. Graylog2](https://github.com/hocchudong/ghichep-graylog/tree/master/graylog2)
   
 
+### Người tham gia đóng góp
+
+- Đinh Văn Mạnh 
+- Tô Thành Công
