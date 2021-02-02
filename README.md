@@ -1,4 +1,4 @@
-# Tài liệu tìm hiểu về Graylog
+# Tài liệu ghi chép về Graylog
 
 ### Mục lục
 

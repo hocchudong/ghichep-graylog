@@ -1,4 +1,4 @@
-# Tài liệu tìm hiểu về Graylog
+# Tài liệu tìm hiểu về Graylog 4
 
 Tài liệu ghi chép về tìm hiểu và triển khai graylog 4 để thu thập log ssh của các hệ điều hành CentOS 7, Ubuntu 18 và Windows server 2012. 
 
